@@ -1,0 +1,15 @@
+{
+    "name": "lucia/controle_de_estoque",
+    "autoload": {
+        "psr-4": {
+            "Lucia\\ControleDeEstoque\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Maisson Leal da Silva",
+            "email": "maisson.ifsul@gmail.com"
+        }
+    ],
+    "require": {}
+}
