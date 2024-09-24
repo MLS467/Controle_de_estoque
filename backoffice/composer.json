@@ -2,8 +2,12 @@
     "name": "lucia/controle_de_estoque",
     "autoload": {
         "psr-4": {
-            "Lucia\\ControleDeEstoque\\": "src/"
-        }
+            "sistema\\": "model/",
+            "sistema\\": "helpers/"
+        },
+        "files": [
+            "config/config.php"
+        ]
     },
     "authors": [
         {
