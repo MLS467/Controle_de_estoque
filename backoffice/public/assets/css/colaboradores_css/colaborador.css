@@ -1,0 +1,327 @@
+body {
+    box-sizing: border-box;
+    width: 100%;
+    height: 100vh;
+    overflow-y: hidden;
+}
+
+:root {
+    --cor-principal: #248;
+    --cor-secundaria: #ccc;
+    --borda: 1px solid red;
+}
+
+
+/*container caixa*/
+.container {
+    width: 90%;
+    margin: auto auto;
+}
+
+/***************/
+
+/*tabela*/
+
+#divTabela {
+    height: calc(100vh - 100px);
+    overflow-y: scroll;
+    /*adicionar no proj*/
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    /* border: var(--borda); */
+}
+
+table {
+    margin-top: 15%;
+    width: 80%;
+    border-collapse: collapse;
+    margin-bottom: 10%;
+    font-size: 18px;
+    text-align: left;
+}
+
+th {
+    padding: 10px 15px;
+    border: 1px solid #ddd;
+}
+
+td {
+    padding: 0px 15px;
+    border: 1px solid #ddd;
+}
+
+thead tr {
+    background-color: var(--cor-principal);
+    color: #fff;
+}
+
+tbody tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+th {
+    text-transform: capitalize;
+}
+
+/*******************/
+
+
+/****BOTÃO DE ADD********/
+
+
+#divAdd div {
+    /* border: var(--borda); */
+    width: 20%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-direction: row;
+    /* border: var(--borda); */
+}
+
+#divAdd {
+    /* border-radius: 100%; */
+    /* margin-top: 0%; */
+    width: 80%;
+    height: 50px;
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-start;
+    flex-direction: row;
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+
+#imgDiv {
+    /* border: var(--borda); */
+    margin: 0px 10px;
+    display: flex;
+    width: 40px;
+    height: 40px;
+    justify-content: center;
+    align-items: center;
+    margin-left: 1%;
+    border-radius: 100%;
+    background-color: var(--cor-principal);
+    cursor: pointer;
+}
+
+#imgDiv:hover {
+    opacity: 0.7;
+}
+
+/*********************/
+
+/*Adicionar novo colaborador */
+
+.borda {
+    border: var(--borda);
+}
+
+#formAddColab {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.75);
+}
+
+#caixaForm {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 40%;
+    height: 40%;
+}
+
+#tituloForm {
+    text-transform: uppercase;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: row;
+    color: #fff;
+    padding: 2% 5%;
+    border-radius: 5px 5px 0px 0px;
+    background-color: var(--cor-principal);
+}
+
+#closeTitulo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: inherit;
+    width: 5%;
+}
+
+#closeTitulo:hover {
+    border-radius: 5px;
+    background-color: red;
+}
+
+#corpoForm {
+    width: 100%;
+    padding: 3% 5%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    flex-direction: column;
+    background-color: var(--cor-secundaria);
+}
+
+#corpoForm input,
+select {
+    border: var(--borda);
+    margin: 5px;
+    padding: 10px;
+    width: 100%;
+    border-radius: 5px;
+    border: none;
+}
+
+#divfile {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#fileInput {
+    margin-top: 15px;
+    width: 100%;
+    font-size: 15px;
+    /* border: var(--borda) !important; */
+}
+
+#divPreview {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* border: var(--borda); */
+    width: 100%;
+
+}
+
+#preview {
+    width: 100px;
+    height: 150px;
+}
+
+#rodape {
+    width: 100%;
+    height: 15%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    padding: 2% 5%;
+    border-radius: 0px 0px 5px 5px;
+    background-color: var(--cor-principal);
+}
+
+#rodape div {
+    width: 60%;
+    height: auto;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-direction: row;
+}
+
+#rodape div button {
+    width: 45%;
+    padding: 12px 25px;
+    background-color: var(--cor-principal);
+    border: white 1px solid;
+    color: white;
+    border-radius: 5px;
+    text-transform: capitalize;
+}
+
+#rodape div button:hover {
+    padding: 12px 25px;
+    background-color: var(--cor-secundaria);
+    border: none;
+    color: black;
+    border-radius: 5px;
+    text-transform: uppercase;
+}
+
+.ocultar {
+    display: none !important;
+    transition: all 0.5s !important;
+}
+
+/***************************/
+
+
+/** Telefone **/
+#resulTelColab {
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.numtel {
+    margin-top: 10px;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+    align-items: center;
+    color: white;
+    padding: 10px;
+    /* border: var(--borda) */
+    border-radius: 5px;
+    background-color: #000;
+}
+
+.numtel div {
+    margin-right: 15px;
+}
+
+.numtel img {
+    width: 12px;
+    margin-left: 15px;
+    background-color: red;
+}
+
+
+/***************************/
+
+
+/**icone da tabela (acões) **/
+.iconeTabela {
+    height: 25px;
+    width: 32px;
+}
+
+.iconeTabelaOn {
+    width: 40px !important;
+}
+
+
+#acoes {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-direction: row;
+}
+
+tr:nth-child(odd):hover,
+tr:nth-child(even):hover {
+    background-color: rgb(79, 120, 201);
+    color: #fff;
+}
+
+/******************************/

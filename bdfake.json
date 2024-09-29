@@ -1,0 +1,107 @@
+{
+  "usuario": [
+    {
+      "id": "1",
+      "nome": "Teixerinha Oliveira",
+      "tipo": "Super usuário",
+      "status": "Ativo",
+      "telefone": "53999999999",
+      "operacoes": "excluir/editar"
+    },
+    {
+      "id": "2",
+      "nome": "Julia Santos",
+      "tipo": "Usuário",
+      "status": "Inativo",
+      "telefone": "11988887777",
+      "operacoes": "excluir/editar"
+    },
+    {
+      "id": "3",
+      "nome": "Carlos Souza",
+      "tipo": "Administrador",
+      "status": "Ativo",
+      "telefone": "31977776666",
+      "operacoes": "excluir/editar"
+    },
+    {
+      "id": "4",
+      "nome": "Fernanda Lima",
+      "tipo": "Usuário",
+      "status": "Ativo",
+      "telefone": "21966665555",
+      "operacoes": "excluir/editar"
+    },
+    {
+      "id": "5",
+      "nome": "Roberto Pereira",
+      "tipo": "Super usuário",
+      "status": "Inativo",
+      "telefone": "21955554444",
+      "operacoes": "excluir/editar"
+    },
+    {
+      "id": "6",
+      "nome": "Ana Clara",
+      "tipo": "Usuário",
+      "status": "Ativo",
+      "telefone": "11944443333",
+      "operacoes": "excluir/editar"
+    },
+    {
+      "id": "7",
+      "nome": "José Silva",
+      "tipo": "Administrador",
+      "status": "Ativo",
+      "telefone": "31933332222",
+      "operacoes": "excluir/editar"
+    },
+    {
+      "id": "8",
+      "nome": "Maria Oliveira",
+      "tipo": "Usuário",
+      "status": "Inativo",
+      "telefone": "53922221111",
+      "operacoes": "excluir/editar"
+    },
+    {
+      "id": "9",
+      "nome": "eqwewqqewwqe",
+      "tipo": "admin",
+      "status": "ativo",
+      "telefone": "11944443333",
+      "operacoes": "excluir/editar"
+    },
+    {
+      "id": "2f37",
+      "nome": "dasdadasdas",
+      "tipo": "admin",
+      "status": "ativo",
+      "telefone": "21955554444"
+    },
+    {
+      "id": "2a45",
+      "nome": "Maisson",
+      "tipo": "cliente",
+      "status": "inativo",
+      "telefone": [
+        "5555555555",
+        "5555555555"
+      ]
+    },
+    {
+      "id": "dd4e",
+      "nome": "LUCIANE DE ALMEIDA RODRIGUES",
+      "tipo": "admin",
+      "status": "ativo",
+      "telefone": []
+    },
+    {
+      "id": "ed7b",
+      "nome": "Maisson Bolado",
+      "tipo": "funcionario",
+      "status": "inativo",
+      "telefone": []
+    }
+  ]
+}

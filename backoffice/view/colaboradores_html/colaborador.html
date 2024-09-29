@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../public/assets/css/colaboradores_css/colaborador.css">
+    <!-- <link rel="stylesheet" href="../../../estoque_geral.css"> -->
+    <title>Colaborador</title>
+</head>
+
+<body class="container">
+
+    <div id="formAddColab" class="ocultar">
+        <div id="caixaForm" class="borda">
+            <div id="tituloForm" class="">
+                adicionar novo colaborador
+                <div id="closeTitulo">
+                    <img id="close" src="../../../imgs/close.svg" alt="fechar">
+                </div>
+            </div><br>
+
+            <div id="corpoForm">
+                <label for="nomeCompleto">Nome Completo:</label>
+                <input type="text" id="nomeCompleto" name="nomeCompleto" required><br><br>
+
+                <label for="tipoUsuario">Tipo de Usuário:</label>
+                <select id="tipoUsuario" name="tipoUsuario" required>
+                    <option value="admin">Admin</option>
+                    <option value="cliente">Cliente</option>
+                    <option value="funcionario">Funcionário</option>
+                </select><br><br>
+
+                <label for="statusConta">Status de Conta:</label>
+                <select id="statusConta" name="statusConta" required>
+                    <option value="ativo">Ativo</option>
+                    <option value="inativo">Inativo</option>
+                </select><br><br>
+
+
+                <label for="telefone">Telefone:</label>
+                <input type="tel" id="telefone" name="telefone" pattern="[0-9]{2}-[0-9]{5}-[0-9]{4}"
+                    placeholder="00-00000-0000" required><br><br>
+                <div id="divfile">
+                    <input type="file" name="foto" id="fileInput">
+                    <div id="divPreview">
+                        <img id="preview" src="" alt="FOTO AQUI">
+                    </div>
+                </div>
+
+                <div id="resulTelColab">
+
+                </div>
+            </div>
+
+            <div id="rodape">
+                <div class="">
+                    <button id="guardarColab" type="submit">Guardar</button>
+                    <button id="cancelarColab">cancelar</button>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+
+    <h1>Colaborador</h1>
+    <div id="divTabela">
+
+        <div id="divAdd">
+            <div>
+                <p>Adicionar novo colaborador</p>
+                <div id="imgDiv"><img id="" src="../../../imgs/add_24dp_E8EAED_FILL0_wght400_GRAD0_opsz24.svg"
+                        title="Adicionar novo colaborador" alt="">
+                </div>
+            </div>
+        </div>
+
+        <table id="tabelaColab">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Nome Completo</th>
+                    <th>Tipo de Usuário</th>
+                    <th>Status de Conta</th>
+                    <th>Telefone</th>
+                    <th>Ações</th>
+                </tr>
+            </thead>
+            <tbody id="dadosColab">
+
+
+
+            </tbody>
+        </table>
+
+    </div>
+
+    <script src="../../public/assets/js/colaboradores_js/index.js" type="module"></script>
+</body>
+
+</html>
