@@ -1,6 +1,6 @@
 <?php
 
-namespace sistema;
+namespace sistema\Model;
 
 require_once __DIR__ . "/../vendor/autoload.php";
 

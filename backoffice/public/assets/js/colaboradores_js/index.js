@@ -5,11 +5,11 @@ import { constroiDivTel } from "./constroiDivTel.js";
 import { limpaCampos } from "./limpaCampos.js";
 import { PegarId, PegarElemClass } from "./pegaElementosDOM.js";
 import { editarColab } from "./editarColab.js";
+import { pegaTipo } from "./tipoColab.js";
 
 /* configuração de endpoint para consumir dados do usuário */
 const config = {
-    // endpoint: `./bdfake.json`
-    endpoint: `http://localhost:3000/usuario`
+    endpoint: `/Controle_de_estoque/backoffice/api/retornaColab.php`
 }
 
 pegaDadosUsuarios(config);
@@ -26,7 +26,7 @@ PegarId('guardarColab').addEventListener('click', evt => {
         arr.push(e.textContent);
     });
 
-    const endpoint = `http://localhost:3000/usuario`;
+    const endpoint = `/Controle_de_estoque/backoffice/api/inserirJson.php`;
 
     const dados = {
         nome: PegarId('nomeCompleto').value,
@@ -54,7 +54,7 @@ PegarId('close').addEventListener('click', ocultar);
 PegarId('telefone').addEventListener('keyup', evt => {
     if (evt.key === 'Enter') {
         const valor = PegarId('telefone').value;
-        const img = 'img/close.svg'
+        const img = '/Controle_de_estoque/imgs/close.svg';
 
         valor.length < 8 || valor === 0 ? alert("Insira um telefone válido!") : constroiDivTel(valor, img);
         PegarId('telefone').value = '';
@@ -65,3 +65,10 @@ PegarId('telefone').addEventListener('keyup', evt => {
 /************************************************************ */
 
 
+/************ PEGANDO O TIPO DE USUÁRIO ************************ */
+const configTipo = {
+    endpoint: `/Controle_de_estoque/backoffice/api/retornaTipoColab.php`
+}
+
+pegaTipo(configTipo);
+/************************************************************ */

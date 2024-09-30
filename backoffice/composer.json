@@ -1,9 +1,9 @@
 {
-    "name": "lucia/controle_de_estoque",
+    "name": "maisson/controle_de_estoque",
     "autoload": {
         "psr-4": {
-            "sistema\\": "model/",
-            "sistema\\": "helpers/"
+            "sistema\\Model\\": "model/",
+            "sistema\\Helpers\\": "helpers/"
         },
         "files": [
             "config/config.php"

@@ -1,19 +1,23 @@
 body {
     box-sizing: border-box;
     width: 100%;
-    height: 100vh;
+    height: calc(100vh-120px);
     overflow-y: hidden;
 }
 
 :root {
     --cor-principal: #248;
     --cor-secundaria: #ccc;
-    --borda: 1px solid red;
+    --cor-terciaria: rgb(79, 120, 201);
+    --bordaRed: 1px solid red;
+    --bordablue: 1px solid blue;
+    --bordaGreen: 1px solid green;
 }
 
 
 /*container caixa*/
 .container {
+    border: var(--borda);
     width: 90%;
     margin: auto auto;
 }
@@ -65,27 +69,31 @@ th {
     text-transform: capitalize;
 }
 
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: var(--cor-terciaria);
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background-color: #cce;
+    border-radius: 10px;
+}
+
+
+
 /*******************/
 
 
 /****BOTÃO DE ADD********/
 
-
-#divAdd div {
-    /* border: var(--borda); */
-    width: 20%;
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    flex-direction: row;
-    /* border: var(--borda); */
-}
-
 #divAdd {
-    /* border-radius: 100%; */
-    /* margin-top: 0%; */
+    /* border: var(--bordaGreen); */
     width: 80%;
-    height: 50px;
+    height: 70px;
     display: flex;
     justify-content: flex-end;
     align-items: flex-start;
@@ -95,19 +103,31 @@ th {
     right: 0;
 }
 
+#divAddContent {
+    position: relative;
+    width: 25%;
+    height: inherit;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-direction: row;
+
+    /* border: var(--bordablue); */
+}
+
 #imgDiv {
-    /* border: var(--borda); */
+    /* border: var(--bordaRed); */
     margin: 0px 10px;
     display: flex;
-    width: 40px;
-    height: 40px;
+    width: 50px;
+    height: 50px;
     justify-content: center;
     align-items: center;
-    margin-left: 1%;
-    border-radius: 100%;
+    border-radius: 50%;
     background-color: var(--cor-principal);
     cursor: pointer;
 }
+
 
 #imgDiv:hover {
     opacity: 0.7;
@@ -115,8 +135,7 @@ th {
 
 /*********************/
 
-/*Adicionar novo colaborador */
-
+/* Adicionar novo colaborador */
 .borda {
     border: var(--borda);
 }
@@ -131,129 +150,123 @@ th {
     top: 0;
     left: 0;
     background-color: rgba(0, 0, 0, 0.75);
+    z-index: 999;
 }
 
 #caixaForm {
+    position: relative;
+    border-radius: 15px;
     display: flex;
-    justify-content: center;
-    align-items: center;
     flex-direction: column;
-    width: 40%;
-    height: 40%;
+    width: 50%;
+    /* height: 90%; */
+    max-height: 85%;
+    overflow-y: auto;
+    background-color: var(--cor-secundaria);
 }
 
 #tituloForm {
     text-transform: uppercase;
-    width: 100%;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    flex-direction: row;
     color: #fff;
-    padding: 2% 5%;
-    border-radius: 5px 5px 0px 0px;
+    padding: 10px;
+    border-radius: 5px 5px 0 0;
     background-color: var(--cor-principal);
 }
 
-#closeTitulo {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: inherit;
-    width: 5%;
-}
-
-#closeTitulo:hover {
-    border-radius: 5px;
-    background-color: red;
-}
-
 #corpoForm {
-    width: 100%;
-    padding: 3% 5%;
+    overflow-y: hidden;
     display: flex;
-    justify-content: flex-start;
-    align-items: flex-start;
     flex-direction: column;
+    padding: 10px;
     background-color: var(--cor-secundaria);
 }
 
+#corpoForm label {
+    margin: 5px 0;
+}
+
 #corpoForm input,
-select {
-    border: var(--borda);
-    margin: 5px;
-    padding: 10px;
-    width: 100%;
+#corpoForm select {
+    padding: 5px;
+    margin-bottom: 10px;
     border-radius: 5px;
-    border: none;
+    border: var(--borda);
 }
 
 #divfile {
     width: 100%;
     display: flex;
-    justify-content: center;
+    justify-content: space-around;
+    flex-direction: row;
     align-items: center;
 }
 
 #fileInput {
-    margin-top: 15px;
-    width: 100%;
-    font-size: 15px;
-    /* border: var(--borda) !important; */
+    margin-top: 10px;
+    width: 90%;
+    /* Reduz a largura do input */
 }
 
 #divPreview {
     display: flex;
     justify-content: center;
     align-items: center;
-    /* border: var(--borda); */
-    width: 100%;
-
 }
 
 #preview {
+
     width: 100px;
-    height: 150px;
+    height: 130px;
 }
 
 #rodape {
-    width: 100%;
-    height: 15%;
     display: flex;
     justify-content: center;
     align-items: center;
-    color: #fff;
-    padding: 2% 5%;
-    border-radius: 0px 0px 5px 5px;
+    padding: 10px;
+    /* Adiciona espaçamento interno */
     background-color: var(--cor-principal);
+    border-radius: 0 0 5px 5px;
 }
 
 #rodape div {
     width: 60%;
-    height: auto;
     display: flex;
     justify-content: space-around;
     align-items: center;
-    flex-direction: row;
 }
 
 #rodape div button {
-    width: 45%;
     padding: 12px 25px;
     background-color: var(--cor-principal);
-    border: white 1px solid;
+    border: none;
     color: white;
     border-radius: 5px;
     text-transform: capitalize;
 }
 
 #rodape div button:hover {
-    padding: 12px 25px;
     background-color: var(--cor-secundaria);
-    border: none;
     color: black;
+}
+
+#closeTitulo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     border-radius: 5px;
-    text-transform: uppercase;
+}
+
+.bordaFoto {
+    border: 2px solid #ddd;
+}
+
+#closeTitulo:hover {
+
+    background-color: red;
 }
 
 .ocultar {
@@ -261,34 +274,31 @@ select {
     transition: all 0.5s !important;
 }
 
-/***************************/
-
 
 /** Telefone **/
 #resulTelColab {
     width: 100%;
+    height: 50px;
+    overflow: auto;
     display: flex;
-    justify-content: space-around;
+    justify-content: flex-start;
+    align-items: flex-start;
     flex-direction: row;
     flex-wrap: wrap;
 }
 
 .numtel {
-    margin-top: 10px;
     display: flex;
     justify-content: space-between;
-    flex-direction: row;
     align-items: center;
+    flex-direction: row;
     color: white;
     padding: 10px;
-    /* border: var(--borda) */
     border-radius: 5px;
-    background-color: #000;
+    background-color: var(--cor-terciaria);
+    margin: 0px 3px 5px 0px !important;
 }
 
-.numtel div {
-    margin-right: 15px;
-}
 
 .numtel img {
     width: 12px;
@@ -320,7 +330,7 @@ select {
 
 tr:nth-child(odd):hover,
 tr:nth-child(even):hover {
-    background-color: rgb(79, 120, 201);
+    background-color: var(--cor-terciaria);
     color: #fff;
 }
 

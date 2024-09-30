@@ -1,5 +1,6 @@
 import { PegarId } from "./pegaElementosDOM.js";
 
+// recebe os dados para enviar para API 
 const recebeDadosColab = (endpoint, dados) => {
     const fileInput = PegarId("fileInput");
     const formData = new FormData();

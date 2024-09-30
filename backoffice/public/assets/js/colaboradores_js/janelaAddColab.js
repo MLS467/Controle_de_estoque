@@ -6,6 +6,7 @@ const janelaAddColab = PegarId('formAddColab');
 function controleDoForm() {
     janelaAddColab.classList.remove('ocultar');
     mostraImg();
+    ocultar();
 }
 
 const ocultar = () => {

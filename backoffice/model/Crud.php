@@ -1,8 +1,8 @@
 <?php
 
-namespace sistema;
+namespace sistema\Model;
 
-use sistema\Db;
+use sistema\Model\Db;
 
 require_once __DIR__ . "/../vendor/autoload.php";
 
@@ -16,9 +16,11 @@ abstract class Crud extends Db
     abstract function inserirDados();
     abstract function atualizarDados($id);
 
-    public function selecionarTodosRegistros()
+    public function selecionarTodosRegistros($ordemNome)
     {
-        $sql = "SELECT * FROM $this->nomeTabela ORDER BY nomeCompleto";
+        $ordem = $ordemNome;
+
+        $sql = "SELECT * FROM $this->nomeTabela ORDER BY $ordem";
         $query = self::preparar($sql);
         $query->execute();
         $res = $query->fetchAll(PDO::FETCH_OBJ);
