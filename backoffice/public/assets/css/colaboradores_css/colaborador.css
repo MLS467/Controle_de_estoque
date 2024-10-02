@@ -1,23 +1,44 @@
+* {
+    font-family: 'Poppins', sans-serif !important;
+}
+
 body {
     box-sizing: border-box;
     width: 100%;
     height: calc(100vh-120px);
     overflow-y: hidden;
+    color: var(--cor-quarternaria);
+    font-family: Poppins;
 }
 
+
+
 :root {
-    --cor-principal: #248;
-    --cor-secundaria: #ccc;
-    --cor-terciaria: rgb(79, 120, 201);
+    --cor-principal: #04cb63;
+    --cor-secundaria: #fcb058;
+    --cor-terciaria: #c9c8c7;
+    --cor-quarternaria: #0D0D0D;
     --bordaRed: 1px solid red;
     --bordablue: 1px solid blue;
     --bordaGreen: 1px solid green;
+    --cor-fundo-suave: #f4f4f4;
+    --cor-verde-claro: #66e6a8;
+    --cor-verde-escuro: #038c4c;
+    --cor-azul-suave: #58c4fc;
+    --cor-amarelo-suave: #F2B705;
+    --cor-texto-cinza-escuro: #3a3a3a;
+    --Efeito-brilhar: 0 0 10px rgba(255, 255, 255, 0.5),
+        0 0 20px rgba(255, 255, 255, 0.4),
+        0 0 30px rgba(255, 255, 255, 0.3),
+        0 0 40px rgba(255, 255, 255, 0.2);
 }
+
+
 
 
 /*container caixa*/
 .container {
-    border: var(--borda);
+    /* border: var(--borda); */
     width: 90%;
     margin: auto auto;
 }
@@ -27,23 +48,23 @@ body {
 /*tabela*/
 
 #divTabela {
-    height: calc(100vh - 100px);
-    overflow-y: scroll;
-    /*adicionar no proj*/
     display: flex;
     justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    /* border: var(--borda); */
+    align-items: flex-start;
+    /* padding: 2% 0%; */
+    height: 100vh;
+    overflow-y: auto;
+    /* border: var(--bordaGreen); */
 }
 
 table {
-    margin-top: 15%;
     width: 80%;
+    height: auto !important;
     border-collapse: collapse;
-    margin-bottom: 10%;
-    font-size: 18px;
+    margin-bottom: 15%;
+    font-size: 15px;
     text-align: left;
+    /* padding: 15%; */
 }
 
 th {
@@ -56,13 +77,13 @@ td {
     border: 1px solid #ddd;
 }
 
-thead tr {
-    background-color: var(--cor-principal);
-    color: #fff;
+thead {
+    background-color: var(--cor-quarternaria);
+    color: var(--cor-fundo-suave);
 }
 
 tbody tr:nth-child(even) {
-    background-color: #f2f2f2;
+    background-color: var(--cor-terciaria);
 }
 
 th {
@@ -105,7 +126,7 @@ th {
 
 #divAddContent {
     position: relative;
-    width: 25%;
+    width: 30%;
     height: inherit;
     display: flex;
     justify-content: space-around;
@@ -124,7 +145,7 @@ th {
     justify-content: center;
     align-items: center;
     border-radius: 50%;
-    background-color: var(--cor-principal);
+    background-color: var(--cor-amarelo-suave);
     cursor: pointer;
 }
 
@@ -173,7 +194,7 @@ th {
     color: #fff;
     padding: 10px;
     border-radius: 5px 5px 0 0;
-    background-color: var(--cor-principal);
+    background-color: var(--cor-quarternaria);
 }
 
 #corpoForm {
@@ -181,7 +202,7 @@ th {
     display: flex;
     flex-direction: column;
     padding: 10px;
-    background-color: var(--cor-secundaria);
+    background-color: var(--cor-terciaria);
 }
 
 #corpoForm label {
@@ -218,8 +239,8 @@ th {
 
 #preview {
 
-    width: 100px;
-    height: 130px;
+    width: 70px;
+    height: 100px;
 }
 
 #rodape {
@@ -228,7 +249,7 @@ th {
     align-items: center;
     padding: 10px;
     /* Adiciona espaçamento interno */
-    background-color: var(--cor-principal);
+    background-color: var(--cor-quarternaria);
     border-radius: 0 0 5px 5px;
 }
 
@@ -241,7 +262,7 @@ th {
 
 #rodape div button {
     padding: 12px 25px;
-    background-color: var(--cor-principal);
+    background-color: var(--cor-quarternaria);
     border: none;
     color: white;
     border-radius: 5px;
@@ -277,8 +298,8 @@ th {
 
 /** Telefone **/
 #resulTelColab {
-    width: 100%;
-    height: 50px;
+    /* border: var(--bordaRed); */
+    width: inherit;
     overflow: auto;
     display: flex;
     justify-content: flex-start;
@@ -289,14 +310,16 @@ th {
 
 .numtel {
     display: flex;
+    height: inherit;
     justify-content: space-between;
     align-items: center;
     flex-direction: row;
-    color: white;
-    padding: 10px;
+    color: var(--cor-quarternaria);
+    padding: 8px;
+    border: 1px solid var(--cor-quarternaria);
     border-radius: 5px;
-    background-color: var(--cor-terciaria);
-    margin: 0px 3px 5px 0px !important;
+    background-color: var(--cor-amarelo-suave);
+    margin: 0px 1px 2px 0px !important;
 }
 
 
@@ -314,9 +337,19 @@ th {
 .iconeTabela {
     height: 25px;
     width: 32px;
+    cursor: pointer;
+}
+
+.iconeTabela:hover {
+    height: 25px;
+    width: 32px;
+    border-radius: 50%;
+    box-shadow: var(--Efeito-brilhar);
+    background-color: var(--cor-fundo-suave);
 }
 
 .iconeTabelaOn {
+    cursor: pointer;
     width: 40px !important;
 }
 
@@ -330,8 +363,13 @@ th {
 
 tr:nth-child(odd):hover,
 tr:nth-child(even):hover {
-    background-color: var(--cor-terciaria);
+    background-color: var(--cor-amarelo-suave);
     color: #fff;
+}
+
+#theadPreto:hover {
+    background-color: var(--cor-quarternaria) !important;
+    color: var(--cor-fundo-suave) !important;
 }
 
 /******************************/

@@ -5,20 +5,21 @@ namespace sistema\Model;
 use PDO;
 use PDOException;
 
-class Telefone
+class Telefone extends Crud
 {
     private $id_tel;
     private $id_usu_fk;
     private $numero_tel;
 
-    public function __construct($id_tel = null, $id_usu_fk, $numero_tel)
+    public function __construct($id_tel = null, $id_usu_fk = null, $numero_tel = null)
     {
+        $this->nomeTabela = 'telefone';
         $this->id_tel = $id_tel;
         $this->id_usu_fk = $id_usu_fk;
         $this->numero_tel = $numero_tel;
     }
 
-    public function insert()
+    public function inserirDados()
     {
         try {
             $sql = "INSERT INTO telefone (id_usu_fk, numero_tel) VALUES (:id_usu_fk, :numero_tel)";
@@ -33,6 +34,19 @@ class Telefone
             return false;
         }
     }
+
+    public function selecionarRegistrosTel($id)
+    {
+        $sql = "SELECT * FROM $this->nomeTabela WHERE id_usu_fk = ? LIMIT 100";
+        $query = Db::preparar($sql);
+        $query->execute(array($id));
+        $res = $query->fetchAll(PDO::FETCH_ASSOC);
+        if ($res)
+            return $res;
+        return false;
+    }
+
+    public function atualizarDados($id) {}
 
 
     public function getIdTel()

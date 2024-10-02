@@ -1,18 +1,75 @@
 * {
     box-sizing: border-box;
+    font-family: 'Poppins', sans-serif !important;
 }
 
-:root {
+/* :root {
     --cor-principal: #248;
     --cor-secundaria: #ccc;
     --borda: 1px solid red;
+} */
+
+:root {
+    --cor-principal: #04cb63;
+    --cor-secundaria: #fcb058;
+    --cor-terciaria: #F2F2F2;
+    --cor-quarternaria: #0D0D0D;
+    --bordaRed: 1px solid red;
+    --bordablue: 1px solid blue;
+    --bordaGreen: 1px solid green;
+    --cor-fundo-suave: #f4f4f4;
+    --cor-verde-claro: #66e6a8;
+    --cor-verde-escuro: #038c4c;
+    --cor-azul-suave: #58c4fc;
+    --cor-amarelo-suave: #ffe066;
+    --cor-texto-cinza-escuro: #3a3a3a;
 }
+
 
 body {
     margin: 0px;
     padding: 0px;
     overflow-y: hidden;
 }
+
+/** tela de inicio**/
+
+#conteudoInico {
+    /* border: var(--bordaRed); */
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-start;
+    flex-direction: row;
+    width: 100%;
+    height: 100vh;
+}
+
+#conteudoTexto {
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    /* border: var(--bordaRed); */
+    width: 40%;
+    height: 80%;
+}
+
+
+
+#conteudoAni {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50%;
+    height: 100%;
+}
+
+
+
+/****************************/
+
+
 
 /*MENU LATERAL*/
 #divListaMenu {
@@ -28,8 +85,27 @@ body {
     height: 100vh;
 }
 
+#contatos_Maisson {
+    display: flex;
+    /* border: var(--bordaRed); */
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+    height: 5%;
+    position: absolute;
+    bottom: 0;
+    padding: 5px;
+}
+
+.imgContato_Maisson {
+    width: 32px;
+}
+
+
 #menuLista {
-    background-color: var(--cor-secundaria);
+    position: relative;
+    /* border: var(--bordablue); */
+    background-color: #cccccca3;
     height: inherit;
     width: inherit;
     display: flex;
@@ -39,7 +115,7 @@ body {
 }
 
 .btn_menu {
-    background-color: var(--cor-principal);
+    background-color: var(--cor-quarternaria);
     color: white;
     width: 90%;
     text-align: center;
@@ -55,6 +131,7 @@ body {
 }
 
 #hamb {
+    border-radius: 50%;
     margin-top: 5px;
     cursor: pointer;
 
@@ -78,14 +155,14 @@ body {
 }
 
 #bar {
-    color: white;
+    color: var(--cor-quarternaria);
     display: flex;
     justify-content: space-between;
     align-items: center;
     position: relative;
     width: 100%;
     height: 40px;
-    background-color: var(--cor-principal);
+    background-color: var(--cor-secundaria);
     /* border: var(--borda); */
 }
 

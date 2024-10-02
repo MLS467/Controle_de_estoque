@@ -29,7 +29,8 @@ abstract class Crud extends Db
 
     public function selecionarUmRegistro($id)
     {
-        $sql = "SELECT * FROM $this->nomeTabela WHERE id = ?";
+        $sql = "SELECT * FROM usuario WHERE id_usu = ?";
+        // $sql = "SELECT * FROM $this->nomeTabela WHERE $coluna = ?";
         $query = self::preparar($sql);
         $query->execute(array($id));
         $res = $query->fetch(PDO::FETCH_ASSOC);

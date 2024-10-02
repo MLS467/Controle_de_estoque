@@ -2,8 +2,8 @@ import { PegarId, PegarElemClass } from "./pegaElementosDOM.js";
 import { editarColab } from "./editarColab.js";
 
 // consumindo dados para exibir na tabela de colaboradores
-const pegaDadosUsuarios = async (config) => {
-    const resultado = await fetch(config.endpoint);
+const pegaDadosUsuarios = async (endpoint) => {
+    const resultado = await fetch(endpoint);
     const res = await resultado.json();
 
     res.resultado.map(e => {
@@ -18,8 +18,8 @@ const pegaDadosUsuarios = async (config) => {
             <td>telefone</td>
             <td id="acoes">
             <img src="../../../imgs/on.svg" alt="on" class='iconeTabelaOn'>
-            <img src="../../../imgs/edit.svg" id="editarColab" alt="editar" class='iconeTabela iconTableEdit'>
-            <img src="../../../imgs/delete.svg" alt="deletar" class='iconeTabela '>
+            <img src="../../../imgs/edit.svg" data-idRetornaTel=${e.id_usu} id="editarColab" alt="editar" class='iconeTabela iconTableEdit'>
+            <img src="../../../imgs/delete.svg" alt="deletar" class='iconeTabela'>
             </td>
             </tr>`
     });

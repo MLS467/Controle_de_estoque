@@ -1,12 +1,15 @@
+import { limpaCampos } from "./limpaCampos.js";
 import { mostraImg } from "./mostraImgColab.js";
 import { PegarId } from "./pegaElementosDOM.js";
 
 const janelaAddColab = PegarId('formAddColab');
 
 function controleDoForm() {
-    janelaAddColab.classList.remove('ocultar');
+    window.modojanela = "n";
+    limpaCampos();
+    PegarId('formAddColab').classList.remove('ocultar');
     mostraImg();
-    ocultar();
+    PegarId('msgTitulo').innerHTML = `Adicionar novo colaborador`;
 }
 
 const ocultar = () => {

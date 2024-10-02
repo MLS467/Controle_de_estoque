@@ -6,20 +6,26 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../../estoque_geral.css">
     <link rel="stylesheet" href="../public/assets/css/index.css">
-    <title>Document</title>
+    <link rel="shortcut icon" href="../../imgs/est.png" type="image/x-icon">
+    <title>Controle Estoque</title>
 </head>
 
 <body>
     <!-- BARRA DO TOPO -->
+
     <div id="bar">
         <div></div>
-        <div>LOGO</div>
+        <div><img style="margin-top: 20px;border-radius: 50%;z-index: 1;" src="../../imgs/est.png" alt="estoque"
+                width="70"></div>
         <div class="center">
             config
             <img src="../../imgs/config.svg" alt="">
         </div>
     </div>
+
+
     <!-- FIM BARRA TOPO -->
+
 
     <!-- MENU LATERAL -->
     <div>
@@ -29,8 +35,17 @@
 
         <div id="divListaMenu" class="ocultar">
             <div id="menuLista">
-                <a href="colaboradores_html/colaborador.html" target="cxifra" class="btn_menu">colaborador</a>
+                <a href="inicio.html" target="cxifra" class="btn_menu">Iniciar</a>
+                <a href="colaboradores_html/colaborador.html" target="cxifra" class="btn_menu">colaboradores</a>
 
+                <div id="contatos_Maisson">
+                    <a href="https://github.com/MLS467" target="_blank"> <img class="imgContato_Maisson"
+                            src="../../imgs/github.png" alt="github"></a>
+                    <a href="https://www.linkedin.com/in/maisson-leal-da-silva-373633288/" target="_blank"> <img
+                            class="imgContato_Maisson" src="../../imgs/linkedin-logo.png" alt="linkedin"></a>
+                    <a href="https://www.youtube.com/@cfbcursos" target="_blank"> <img class="imgContato_Maisson"
+                            src="../../imgs/youtube.png" alt="cfbcursos"></a>
+                </div>
             </div>
 
             <img src="../../imgs/menu.svg" id="hamb" alt="hamburguer" width="32">
@@ -41,9 +56,10 @@
 
     <!-- FIM MENU LATERAL -->
 
+
     <!-- IFRAME DAS PAGINAS -->
     <div id="iframeDiv" class="">
-        <iframe id="iframeArq" src="" frameborder="0" name="cxifra"></iframe>
+        <iframe id="iframeArq" src="inicio.html" frameborder="0" name="cxifra"></iframe>
     </div>
     <!-- FIM IFRAME DAS PAGINAS -->
 

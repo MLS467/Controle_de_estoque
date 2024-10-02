@@ -28,7 +28,7 @@ class Usuario extends Crud
         $this->tel = $dados['telefone'] ?? null;
     }
 
-    function inserirDados()
+    public function inserirDados()
     {
         try {
 
@@ -44,13 +44,12 @@ class Usuario extends Crud
                 $this->setIdUsu(Db::conectar()->lastInsertId());
                 if ($this->getIdUsu()) {
                     foreach ($this->tel as $key => $value) {
-                        (new Telefone(null, $this->getIdUsu(), $value))->insert();
+                        (new Telefone(null, $this->getIdUsu(), $value))->inserirDados();
                     }
                     return true;
                 } else
-                    echo 'ERRO 1';
+                    return false;
             } else {
-                echo 'ERRO 2';
                 return false;
             }
         } catch (PDOException $e) {
@@ -58,7 +57,36 @@ class Usuario extends Crud
         }
     }
 
-    function atualizarDados($id) {}
+    public function atualizarDados($id)
+    {
+        try {
+            $this->setIdUsu($id);
+
+            $sql = "UPDATE $this->nomeTabela SET nome_usu=?,tipo_usu_fk=?,status_usu=?,img_usu=? WHERE id_usu = ?";
+
+            $dados = array(
+                $this->getNomeUsu(),
+                $this->getTipoUsuFk(),
+                $this->getStatusUsu(),
+                $this->getImgUsu(),
+                $this->getIdUsu()
+            );
+
+            if (Db::preparar($sql)->execute($dados)) {
+                if ($this->getIdUsu()) {
+                    foreach ($this->tel as $key => $value) {
+                        (new Telefone(null, $this->getIdUsu(), $value))->inserirDados();
+                    }
+                    return true;
+                } else
+                    return false;
+            } else {
+                return false;
+            }
+        } catch (PDOException $e) {
+            echo $e->getMessage();
+        }
+    }
 
 
     public function getIdUsu(): int

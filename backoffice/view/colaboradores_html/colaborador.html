@@ -4,9 +4,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+
     <link rel="stylesheet" href="../../public/assets/css/colaboradores_css/colaborador.css">
     <!-- <link rel="stylesheet" href="../../../estoque_geral.css"> -->
-    <title>Colaborador</title>
+
+    <title>Colaboradores</title>
 </head>
 
 <body class="container borda">
@@ -14,7 +17,7 @@
     <div id="formAddColab" class="ocultar">
         <div id="caixaForm" class="borda">
             <div id="tituloForm">
-                adicionar novo colaborador
+                <div id="msgTitulo"></div>
                 <div id="closeTitulo">
                     <img id="close" src="../../../imgs/close.svg" alt="fechar">
                 </div>
@@ -59,12 +62,12 @@
     </div>
 
 
-    <h1>Colaborador</h1>
+    <h1>Colaboradores</h1>
     <div id="divTabela">
 
         <div id="divAdd">
             <div id="divAddContent">
-                <p>Adicionar novo colaborador</p>
+                <p for="imgDiv">Adicionar novo colaborador</p>
                 <div id="imgDiv"><img id="" src="../../../imgs/add_24dp_E8EAED_FILL0_wght400_GRAD0_opsz24.svg"
                         title="Adicionar novo colaborador" alt="">
                 </div>
@@ -73,7 +76,7 @@
 
         <table id="tabelaColab">
             <thead>
-                <tr>
+                <tr id="theadPreto">
                     <th>ID</th>
                     <th>Nome Completo</th>
                     <th>Tipo de Usuário</th>
