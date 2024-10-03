@@ -1,5 +1,5 @@
 <?php
-require_once __DIR__ . "/../vendor/autoload.php";
+require_once __DIR__ . "/../../vendor/autoload.php";
 
 // fazer a rotina de retornar os dados por id
 

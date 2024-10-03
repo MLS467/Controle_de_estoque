@@ -11,7 +11,9 @@ import { editarColab } from "./editarColab.js";
 import { pegaTipo } from "./tipoColab.js";
 import { endpoints, paths } from "./endpoints.js";
 import { retornaTelColab } from "./retornaTelColab.js"
-
+import { criandoSession } from "./session.js";
+import { verificaStatus } from "./status.js";
+import { ExcluirTel } from "./excluirTelColab.js";
 // Exportação dos módulos importados
 export {
     pegaDadosUsuarios,
@@ -26,5 +28,8 @@ export {
     pegaTipo,
     endpoints,
     paths,
-    retornaTelColab
+    retornaTelColab,
+    criandoSession,
+    verificaStatus,
+    ExcluirTel
 };

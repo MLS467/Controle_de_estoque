@@ -209,12 +209,25 @@ th {
     margin: 5px 0;
 }
 
-#corpoForm input,
-#corpoForm select {
+#corpoForm input {
     padding: 5px;
     margin-bottom: 10px;
     border-radius: 5px;
     border: var(--borda);
+}
+
+#corpoForm select {
+    padding: 5px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    background-color: #fff !important;
+    border: 1px solid #ccc;
+    -webkit-appearance: none;
+    /* Para navegadores baseados em WebKit (Chrome, Safari) */
+    -moz-appearance: none;
+    /* Para Firefox */
+    appearance: none;
+    /* Para todos os navegadores */
 }
 
 #divfile {
@@ -228,6 +241,19 @@ th {
 #fileInput {
     margin-top: 10px;
     width: 90%;
+    display: inline-block;
+    padding: 10px 20px;
+    cursor: pointer;
+    background-color: #4CAF50;
+    /* Cor de fundo verde */
+    color: white;
+    /* Texto branco */
+    border-radius: 5px;
+    /* Cantos arredondados */
+    border: 1px solid #ccc;
+    /* Borda cinza */
+    margin-bottom: 10px;
+    /* Margem inferior */
     /* Reduz a largura do input */
 }
 

@@ -46,6 +46,20 @@ class Telefone extends Crud
         return false;
     }
 
+    public function deletarTele($id, $numero)
+    {
+        $sql = "DELETE FROM telefone WHERE id_usu_fk = ? AND numero_tel = ?";
+
+        $query = Db::preparar($sql);
+        $query->execute(array($id, $numero));
+        if (!$query)
+            return false;
+
+        return true;
+    }
+
+
+
     public function atualizarDados($id) {}
 
 

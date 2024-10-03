@@ -6,6 +6,8 @@ const pegaTipo = async (endpoint) => {
 
     let res = await fetch(endpoint);
     res = await res.json();
+
+
     res.resultado.map(e => {
         PegarId('tipoUsuario').appendChild(criaTipo(e.desc_tip_usu, e.id_tip_usu));
     });

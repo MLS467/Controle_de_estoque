@@ -88,6 +88,26 @@ class Usuario extends Crud
         }
     }
 
+    public function atualizarStatus(string $status, int $id): bool
+    {
+        try {
+            $sql = "UPDATE $this->nomeTabela SET status_usu=? WHERE id_usu = ?";
+
+            $dados = array(
+                $status,
+                $id
+            );
+
+            if (Db::preparar($sql)->execute($dados)) {
+                return true;
+            } else
+                return false;
+        } catch (PDOException $e) {
+            echo $e->getMessage();
+        }
+    }
+
+
 
     public function getIdUsu(): int
     {

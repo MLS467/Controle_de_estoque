@@ -1,9 +1,16 @@
 import {
     pegaDadosUsuarios, controleDoForm, ocultar, recebeDadosColab, constroiDivTel,
-    limpaCampos, PegarId, PegarElemClass, pegaTipo, endpoints, paths
+    limpaCampos, PegarId, PegarElemClass, pegaTipo, endpoints, paths, criandoSession, verificaStatus
 } from './imports.js';
 
+// modo da janela criando global no navegador
 window.modojanela = null;
+
+
+// criando sessoes com nome do servidor
+criandoSession();
+/*********************************** */
+
 
 /* configuração de endpoint para consumir dados do usuário */
 pegaDadosUsuarios(endpoints.dadosUsu);
@@ -14,17 +21,22 @@ pegaDadosUsuarios(endpoints.dadosUsu);
 PegarId('imgDiv').addEventListener('click', controleDoForm);
 /********************************************************** */
 
+/****Editar colaborador no colaborador.js *********/
+
+/**** botão de status do usuario ****/
+
 
 /**** operaçoes da janela adicionar novo colaborador (guardar) ****/
 PegarId('guardarColab').addEventListener('click', evt => {
     const tels = PegarElemClass("novo");
+    console.log(tels);
     let arr = [];
 
     if (tels.length === 0)
         arr = [];
     else
         tels.forEach(e => arr.push(e.textContent));
-
+    console.log(arr);
     const dados = {
         nome: PegarId('nomeCompleto').value,
         tipo: PegarId('tipoUsuario').value,

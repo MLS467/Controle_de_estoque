@@ -28,12 +28,17 @@
                 <input type="text" id="nomeCompleto" name="nomeCompleto" required>
 
                 <label for="tipoUsuario">Tipo de Usuário:</label>
-                <select id="tipoUsuario" name="tipoUsuario" required>
-
+                <select id="tipoUsuario" name="tipoUsuario"
+                    style="padding: 5px; margin-bottom: 10px; border-radius: 5px; background-color: #fff !important; border: 1px solid #ccc; -webkit-appearance: none; -moz-appearance: none; appearance: none;"
+                    required>
+                    <option disabled selected>Escolha o Tipo</option>
                 </select>
 
                 <label for="statusConta">Status de Conta:</label>
-                <select id="statusConta" name="statusConta" required>
+                <select id="statusConta" name="statusConta"
+                    style="padding: 5px; margin-bottom: 10px; border-radius: 5px; background-color: #fff !important; border: 1px solid #ccc; -webkit-appearance: none; -moz-appearance: none; appearance: none;"
+                    required>
+                    <option disabled selected placeholder="Escolha o Status">Escolha o Status</option>
                     <option value="ativo">Ativo</option>
                     <option value="inativo">Inativo</option>
                 </select>

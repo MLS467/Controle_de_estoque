@@ -1,0 +1,3 @@
+{
+    "server":"/Controle_de_estoque/backoffice"
+}

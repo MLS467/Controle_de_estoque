@@ -1,5 +1,5 @@
 <?php
-require_once __DIR__ . "/../vendor/autoload.php";
+require_once __DIR__ . "/../../vendor/autoload.php";
 
 use sistema\Helpers\Helpers;
 use sistema\Model\Usuario;
@@ -8,7 +8,10 @@ use sistema\Model\Usuario;
 $file = isset($_FILES['file']) ? $_FILES['file'] : null;
 $valores = json_decode($_POST['dados'], true);
 $valores['img'] = !empty($file['name']) ? $file['name'] : "";
-$path = "../public/assets/img/";
+$path = "../../public/assets/img/";
+
+Helpers::mostrarArray($_POST);
+
 
 $resposta = []; // Inicializa a resposta
 
@@ -36,5 +39,4 @@ if (!empty($valores)) {
     $resposta['resposta'] = 'Faltam dados para realizar operações';
 }
 
-// Retorna a resposta como JSON
-echo json_encode($resposta);
+echo json_encode(['resposta' => $resposta['resposta']]);

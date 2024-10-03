@@ -3,9 +3,9 @@
 use sistema\Helpers\Helpers;
 use sistema\Model\Usuario;
 
-require_once __DIR__ . "/../vendor/autoload.php";
+require_once __DIR__ . "/../../vendor/autoload.php";
 
-$path = "../public/assets/img/";
+$path = "../../public/assets/img/";
 $id = $_GET['id'];
 $dados = json_decode($_POST['dados'], true);
 

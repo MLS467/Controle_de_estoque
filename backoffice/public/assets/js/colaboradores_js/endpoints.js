@@ -1,12 +1,15 @@
+const server = sessionStorage.getItem('servidor_backoffice');
 // arquivo de endpoints usados no sistema de controle de estoque
 const endpoints = {
-    inserir: `/Controle_de_estoque/backoffice/controller/inserirJson.php`,
-    getTipoUsu: `/Controle_de_estoque/backoffice/controller/retornaTipoColab.php`,
-    dadosUsu: `/Controle_de_estoque/backoffice/controller/retornaColab.php`,
-    excluirUsu: `/Controle_de_estoque/backoffice/controller/excluirColab.php`,
-    editarUsu: `/Controle_de_estoque/backoffice/controller/editarColab.php`,
-    retornaTel: `/Controle_de_estoque/backoffice/controller/retornaTelColab.php`,
-    dadosEditados: `/Controle_de_estoque/backoffice/controller/dadosEditados.php`
+    inserir: `${server}/controller/controller_colaborador/inserirJson.php`,
+    getTipoUsu: `${server}/controller/controller_colaborador/retornaTipoColab.php`,
+    dadosUsu: `${server}/controller/controller_colaborador/retornaColab.php`,
+    excluirUsu: `${server}/controller/controller_colaborador/excluirColab.php`,
+    editarUsu: `${server}/controller/controller_colaborador/editarColab.php`,
+    retornaTel: `${server}/controller/controller_colaborador/retornaTelColab.php`,
+    dadosEditados: `${server}/controller/controller_colaborador/dadosEditados.php`,
+    mudarStatus: `${server}/controller/controller_colaborador/mudarStatusColab.php`,
+    excluirTelColab: `${server}/controller/controller_colaborador/excluirTelColab.php`,
 }
 
 const paths = {
