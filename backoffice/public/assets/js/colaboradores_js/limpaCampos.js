@@ -1,11 +1,12 @@
 import { PegarId } from "./pegaElementosDOM.js";
 import { paths } from "./endpoints.js";
 
+// limpa campos de adicionar novo colaboradores
+// e limpa campos de editar colaboradores
+
 const limpaCampos = () => {
     const nome = PegarId('nomeCompleto');
     nome.value = "";
-    PegarId('tipoUsuario').value = "";
-    PegarId('statusConta').value = "";
     PegarId('telefone').value = "";
     PegarId('resulTelColab').innerHTML = "";
 

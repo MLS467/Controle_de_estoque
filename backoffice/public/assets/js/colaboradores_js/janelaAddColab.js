@@ -2,6 +2,7 @@ import { limpaCampos } from "./limpaCampos.js";
 import { mostraImg } from "./mostraImgColab.js";
 import { PegarId } from "./pegaElementosDOM.js";
 
+// mostra a tela de adicionar novo colaborador
 const janelaAddColab = PegarId('formAddColab');
 
 function controleDoForm() {

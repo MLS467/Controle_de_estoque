@@ -10,6 +10,7 @@ const endpoints = {
     dadosEditados: `${server}/controller/controller_colaborador/dadosEditados.php`,
     mudarStatus: `${server}/controller/controller_colaborador/mudarStatusColab.php`,
     excluirTelColab: `${server}/controller/controller_colaborador/excluirTelColab.php`,
+    PesquisaAvancada: `${server}/controller/controller_colaborador/pesquisaAvancada.php`,
 }
 
 const paths = {

@@ -1,6 +1,6 @@
 import { paths } from "./endpoints.js";
 import { PegarId } from "./pegaElementosDOM.js";
-
+import { Caixa } from "../../../../../utils/caixaPersReutilizavel/caixa.js";
 // recebe os dados para enviar para API 
 const recebeDadosColab = (endpoint, dados) => {
 
@@ -20,6 +20,7 @@ const recebeDadosColab = (endpoint, dados) => {
         .then(response => response.text())
         .then(result => {
             console.log("Arquivo enviado com sucesso:", result);
+
         })
         .catch(error => {
             console.error("Erro ao enviar o arquivo:", error);

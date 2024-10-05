@@ -1,5 +1,7 @@
 import { PegarId } from "./pegaElementosDOM.js";
 
+/*** Mostra a imagem no popup  *** */
+
 const mostraImg = () => {
     // Adiciona um listener ao evento 'change' do input de arquivo
     PegarId('fileInput').addEventListener('change', function (event) {
@@ -30,9 +32,3 @@ const mostraImg = () => {
 }
 
 export { mostraImg };
-
-// < !--Input para selecionar um arquivo de imagem-- >
-//     <input type="file" id="fileInput">
-
-//         <!-- Imagem que será exibida após a seleção -->
-//         <img id="preview" style="display:none;">

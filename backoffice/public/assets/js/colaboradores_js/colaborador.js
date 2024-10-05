@@ -1,13 +1,19 @@
 import { PegarId, PegarElemClass } from "./pegaElementosDOM.js";
 import { editarColab } from "./editarColab.js";
 import { verificaStatus } from "./status.js";
+import { filtragem } from "./filtragem.js";
 
 // consumindo dados para exibir na tabela de colaboradores
 const pegaDadosUsuarios = async (endpoint) => {
     const resultado = await fetch(endpoint);
     const res = await resultado.json();
+    MostraLinhas(res.resultado);
+}
 
-    res.resultado.map(e => {
+// mostra as linhas da tabela
+function MostraLinhas(arr) {
+    PegarId('dadosColab').innerHTML = "";
+    arr.map(e => {
         let tipo = retornaTipo(e.tipo_usu_fk);
         let status = retornaStatus((e.status_usu).toLowerCase());
         let statusVal = null;
@@ -31,6 +37,7 @@ const pegaDadosUsuarios = async (endpoint) => {
             </tr>`
     });
 
+
     /********************************************************************** */
 
     /****Editar colaborador*********/
@@ -43,9 +50,15 @@ const pegaDadosUsuarios = async (endpoint) => {
     PegarElemClass('iconeTabelaOn').forEach(e => e.addEventListener('click', evt => verificaStatus(evt.target)));
     /************************* */
 
-
-
+    /**************** FILTRAGEM ********************* */
+    const searchInput = PegarId('filtragem');
+    const tableRows = document.querySelectorAll('#dadosColab tr');
+    filtragem(searchInput, tableRows);
+    /*********************************************/
 }
+
+
+
 
 const retornaTipo = (num) => {
     switch (num) {
@@ -68,7 +81,7 @@ const retornaStatus = (st) => {
     }
 }
 
-export { pegaDadosUsuarios };
+export { pegaDadosUsuarios, MostraLinhas };
 
 
 

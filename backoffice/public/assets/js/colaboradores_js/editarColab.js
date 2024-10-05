@@ -4,6 +4,7 @@ import { limpaCampos } from "./limpaCampos.js";
 import { retornaTelColab } from "./retornaTelColab.js";
 import { constroiDivTel } from "./constroiDivTel.js";
 import { mostraImg } from "./mostraImgColab.js";
+import { Caixa } from "../../../../../utils/caixaPersReutilizavel/caixa.js";
 
 
 const editarColab = async (id) => {
@@ -17,7 +18,13 @@ const editarColab = async (id) => {
     const tels = await retornaTelColab(id, endpoints.retornaTel);
 
     if (tels.telefones === "Nenhum Telefone encotrado!") {
-        alert("Colaborador sem Telefone!");
+        const config = {
+            cor: "#f00",
+            tipo: "ok",
+            texto: "Colaborador sem Telefone!",
+            titulo: "Mensagem",
+        }
+        Caixa.mostrar(config);
     } else {
         tels.telefones.forEach(element => {
             constroiDivTel(element.numero_tel, paths.imgExcluir, "e");

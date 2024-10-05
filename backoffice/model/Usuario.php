@@ -5,6 +5,7 @@ namespace sistema\Model;
 require_once __DIR__ . "/../vendor/autoload.php";
 
 use PDOException;
+use PDO;
 use sistema\Model\Crud;
 
 
@@ -107,7 +108,14 @@ class Usuario extends Crud
         }
     }
 
+    public function pesquisarPor($where, $tipo)
+    {
+        $sql = "SELECT * FROM usuario $where";
+        $query = Db::preparar($sql);
+        $query->execute();
 
+        return $query->fetchAll(PDO::FETCH_ASSOC);
+    }
 
     public function getIdUsu(): int
     {

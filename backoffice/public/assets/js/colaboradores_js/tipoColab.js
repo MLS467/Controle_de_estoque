@@ -1,5 +1,4 @@
 // pegando os tipos de colaboradores 
-
 import { PegarId } from "./pegaElementosDOM.js";
 
 const pegaTipo = async (endpoint) => {

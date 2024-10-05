@@ -1,24 +1,22 @@
 * {
+    box-sizing: border-box;
     font-family: 'Poppins', sans-serif !important;
 }
 
 body {
-    box-sizing: border-box;
-    width: 100%;
     height: calc(100vh-120px);
     overflow-y: hidden;
     color: var(--cor-quarternaria);
     font-family: Poppins;
+    /* border: var(--bordaRed) !important; */
 }
-
-
 
 :root {
     --cor-principal: #04cb63;
     --cor-secundaria: #fcb058;
     --cor-terciaria: #c9c8c7;
     --cor-quarternaria: #0D0D0D;
-    --bordaRed: 1px solid red;
+    --bordaRed: 2px solid red;
     --bordablue: 1px solid blue;
     --bordaGreen: 1px solid green;
     --cor-fundo-suave: #f4f4f4;
@@ -34,7 +32,149 @@ body {
 }
 
 
+/***********JANELA DE PESQUISA AVANCADA *************/
+#pesquisaAvancada {
+    width: 100%;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.75);
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
 
+#tituloPesq {
+    color: #fff;
+    display: inherit;
+    justify-content: space-between;
+    align-items: center;
+    width: 40%;
+    padding: 0px 15px;
+    background-color: #000;
+    border-radius: 5px 5px 0px 0px;
+}
+
+#CorpoPesq {
+    /* border: 1px solid orangered; */
+    background-color: #eee;
+    display: inherit;
+    padding: 0px 15px;
+    justify-content: space-around;
+    align-items: center;
+    width: 40%;
+    height: 20%;
+    max-height: 50%;
+    flex-direction: column;
+}
+
+#CorpoPesq div {
+    width: 90%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#CorpoPesq div input[type='text'] {
+    border: 1px solid gray;
+    width: 100%;
+    padding: 1%;
+    border-radius: 5px;
+}
+
+#CorpoPesq div input[type='text']:focus {
+    border: 1px solid orangered !important;
+    outline: none !important;
+}
+
+#CorpoPesq div input[type='radio'] {
+    margin: 15px;
+    padding: 25px;
+    width: 20%;
+    height: 15px;
+}
+
+.footerPesq {
+    display: inherit;
+    justify-content: center;
+    align-items: center;
+    width: 40%;
+    padding: 0px 15px;
+    background-color: #000;
+    border-radius: 0px 0px 5px 5px;
+    padding: 10px 15px;
+}
+
+.footerPesq button {
+    background-color: #f39c12;
+    /* Cor de fundo laranja suave */
+    color: white;
+    /* Cor do texto */
+    padding: 10px 20px;
+    /* Espaçamento interno do botão */
+    border: none;
+    /* Remove a borda */
+    border-radius: 5px;
+    /* Bordas arredondadas */
+    cursor: pointer;
+    /* Muda o cursor para pointer ao passar sobre o botão */
+    font-size: 16px;
+    /* Tamanho da fonte */
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    /* Animação suave para hover */
+}
+
+.footerPesq button:hover {
+    background-color: #e67e22;
+    /* Muda a cor de fundo ao passar o mouse */
+    transform: scale(1.05);
+    /* Aumenta o tamanho ligeiramente no hover */
+}
+
+.footerPesq button:active {
+    background-color: #d35400;
+    /* Cor de fundo mais escura quando clicado */
+    transform: scale(0.98);
+    /* Suavemente diminui ao clicar */
+}
+
+/********************************/
+
+
+/***** topo *****/
+#divTopo {
+    width: 50%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    flex-direction: column;
+    /* border: var(--bordaRed); */
+}
+
+#divTopo div {
+    /* border: var(--bordablue); */
+    display: flex;
+    width: 100%;
+    margin-left: 18%;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+#divTopo div input[type='text'] {
+    margin: 10px;
+    padding: 5px;
+    border: 1px solid gray;
+    border-radius: 50px;
+}
+
+#divTopo div input[type='text']:focus {
+    border: 1px solid var(--cor-secundaria) !important;
+    outline: none !important;
+}
+
+/*****************/
 
 /*container caixa*/
 .container {
@@ -100,7 +240,7 @@ th {
 }
 
 ::-webkit-scrollbar-track {
-    background-color: #cce;
+    background-color: rgba(204, 204, 238, 0.384);
     border-radius: 10px;
 }
 
@@ -110,35 +250,46 @@ th {
 
 
 /****BOTÃO DE ADD********/
-
 #divAdd {
-    /* border: var(--bordaGreen); */
-    width: 80%;
-    height: 70px;
+    z-index: 99;
+    width: 10%;
+    padding: 15px;
+    height: 50%;
     display: flex;
-    justify-content: flex-end;
-    align-items: flex-start;
+    justify-content: space-around;
+    /* align-items: flex-end; */
+    flex-direction: column;
     flex-direction: row;
-    position: absolute;
+    position: fixed;
     top: 0;
     right: 0;
+    margin: 1%;
+    /* border: var(--bordaGreen); */
 }
 
 #divAddContent {
-    position: relative;
-    width: 30%;
-    height: inherit;
+    /* border: var(--bordaRed); */
     display: flex;
-    justify-content: space-around;
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 30%;
+    height: 100%;
+    justify-content: flex-start;
     align-items: center;
-    flex-direction: row;
-
+    flex-direction: column;
     /* border: var(--bordablue); */
 }
 
+
 #imgDiv {
+
+    background-color: var(--cor-amarelo-suave);
+}
+
+.imgDiv {
     /* border: var(--bordaRed); */
-    margin: 0px 10px;
+    margin: 10px 10px;
     display: flex;
     width: 50px;
     height: 50px;
@@ -149,10 +300,21 @@ th {
     cursor: pointer;
 }
 
+.imgDiv:hover {
+    opacity: 0.7;
+    box-shadow: var(--Efeito-brilhar);
+}
 
 #imgDiv:hover {
     opacity: 0.7;
+    box-shadow: var(--Efeito-brilhar);
 }
+
+
+.ocultarBotao {
+    visibility: hidden;
+}
+
 
 /*********************/
 
@@ -171,22 +333,24 @@ th {
     top: 0;
     left: 0;
     background-color: rgba(0, 0, 0, 0.75);
-    z-index: 999;
+    z-index: 99;
+
 }
 
 #caixaForm {
+    border: var(--borda-red);
     position: relative;
     border-radius: 15px;
     display: flex;
     flex-direction: column;
-    width: 50%;
-    /* height: 90%; */
-    max-height: 85%;
+    width: 40%;
+    height: auto;
     overflow-y: auto;
     background-color: var(--cor-secundaria);
 }
 
 #tituloForm {
+    width: 100%;
     text-transform: uppercase;
     display: flex;
     justify-content: space-between;
@@ -198,63 +362,70 @@ th {
 }
 
 #corpoForm {
-    overflow-y: hidden;
     display: flex;
-    flex-direction: column;
+    justify-content: center;
+    width: 100%;
     padding: 10px;
+    max-height: 75%;
+    flex-direction: column;
     background-color: var(--cor-terciaria);
+}
+
+#imgDivPrev {
+    background-color: var(--cor-terciaria);
+    width: 40%;
+    border: var(--borda-red);
 }
 
 #corpoForm label {
     margin: 5px 0;
 }
 
-#corpoForm input {
-    padding: 5px;
+#corpoForm input[type='text'],
+#corpoForm input[type='tel'] {
+    width: 100%;
+    border: 2px solid #ccc;
+    padding: 3px;
     margin-bottom: 10px;
     border-radius: 5px;
-    border: var(--borda);
+}
+
+#corpoForm input[type='text']:focus,
+#corpoForm input[type='tel']:focus {
+    border: 2px solid var(--cor-amarelo-suave);
+    outline: none;
 }
 
 #corpoForm select {
-    padding: 5px;
+    padding: 3px;
+    width: 100%;
     margin-bottom: 10px;
     border-radius: 5px;
-    background-color: #fff !important;
+    background-color: #fff;
     border: 1px solid #ccc;
     -webkit-appearance: none;
-    /* Para navegadores baseados em WebKit (Chrome, Safari) */
     -moz-appearance: none;
-    /* Para Firefox */
     appearance: none;
-    /* Para todos os navegadores */
 }
 
 #divfile {
     width: 100%;
     display: flex;
-    justify-content: space-around;
-    flex-direction: row;
-    align-items: center;
+    justify-content: space-between;
+    align-items: flex-end;
 }
 
 #fileInput {
-    margin-top: 10px;
-    width: 90%;
+    margin-top: 5px;
+    width: 80%;
     display: inline-block;
-    padding: 10px 20px;
+    padding: 5px 10px;
     cursor: pointer;
-    background-color: #4CAF50;
-    /* Cor de fundo verde */
+    background-color: var(--cor-fundo-suave);
     color: white;
-    /* Texto branco */
     border-radius: 5px;
-    /* Cantos arredondados */
     border: 1px solid #ccc;
-    /* Borda cinza */
     margin-bottom: 10px;
-    /* Margem inferior */
-    /* Reduz a largura do input */
 }
 
 #divPreview {
@@ -264,7 +435,6 @@ th {
 }
 
 #preview {
-
     width: 70px;
     height: 100px;
 }
@@ -273,34 +443,20 @@ th {
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 10px;
-    /* Adiciona espaçamento interno */
     background-color: var(--cor-quarternaria);
     border-radius: 0 0 5px 5px;
 }
 
 #rodape div {
-    width: 60%;
+    width: 100%;
     display: flex;
     justify-content: space-around;
     align-items: center;
-}
-
-#rodape div button {
-    padding: 12px 25px;
     background-color: var(--cor-quarternaria);
-    border: none;
-    color: white;
-    border-radius: 5px;
-    text-transform: capitalize;
 }
 
-#rodape div button:hover {
-    background-color: var(--cor-secundaria);
-    color: black;
-}
-
-#closeTitulo {
+#closeTitulo,
+#tituloPesq img {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -311,8 +467,8 @@ th {
     border: 2px solid #ddd;
 }
 
-#closeTitulo:hover {
-
+#closeTitulo:hover,
+#tituloPesq img:hover {
     background-color: red;
 }
 
@@ -321,11 +477,13 @@ th {
     transition: all 0.5s !important;
 }
 
+/***************************/
 
 /** Telefone **/
 #resulTelColab {
     /* border: var(--bordaRed); */
-    width: inherit;
+    width: 100%;
+    height: 45px;
     overflow: auto;
     display: flex;
     justify-content: flex-start;
@@ -336,7 +494,7 @@ th {
 
 .numtel {
     display: flex;
-    height: inherit;
+    height: 30px;
     justify-content: space-between;
     align-items: center;
     flex-direction: row;
@@ -345,7 +503,7 @@ th {
     border: 1px solid var(--cor-quarternaria);
     border-radius: 5px;
     background-color: var(--cor-amarelo-suave);
-    margin: 0px 1px 2px 0px !important;
+    margin: 1px 2px 2px 0px !important;
 }
 
 
@@ -356,7 +514,6 @@ th {
 }
 
 
-/***************************/
 
 
 /**icone da tabela (acões) **/
@@ -385,6 +542,7 @@ th {
     justify-content: space-around;
     align-items: center;
     flex-direction: row;
+
 }
 
 tr:nth-child(odd):hover,

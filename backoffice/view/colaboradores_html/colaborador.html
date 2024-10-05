@@ -14,6 +14,40 @@
 
 <body class="container borda">
 
+    <!-- JANELA DE PESQUISA AVANÇADA -->
+    <div id="pesquisaAvancada" class="ocultar">
+        <div id="tituloPesq">
+            <p>Pesquisa Avancada</p>
+            <img id="closePesqAvanc" src="../../../imgs/close.svg" alt="">
+        </div>
+
+        <div id="CorpoPesq">
+            <div>
+                <div>
+
+                    <label for="idPesq">Id</label>
+                    <input type="radio" checked class="pesqRadio" value="id" id="idPesq" name="tipoPesq">
+                </div>
+                <div>
+
+                    <label for="nomePesq">Nome</label>
+                    <input type="radio" class="pesqRadio" value="nome" id="nomePesq" name="tipoPesq">
+                </div>
+            </div>
+            <div>
+
+                <input type="text" id="Pesq" placeholder="Pesquisar...">
+            </div>
+        </div>
+
+        <div id="footerPesq" class="footerPesq">
+            <button id="btnPesquisar">Pesquisar</button>
+        </div>
+    </div>
+
+    <!-- *********************************************************** -->
+
+    <!-- JANELA DE ADICIONAR NOVO COLABORADOR -->
     <div id="formAddColab" class="ocultar">
         <div id="caixaForm" class="borda">
             <div id="tituloForm">
@@ -24,28 +58,26 @@
             </div>
 
             <div id="corpoForm">
-                <label for="nomeCompleto">Nome Completo:</label>
-                <input type="text" id="nomeCompleto" name="nomeCompleto" required>
-
-                <label for="tipoUsuario">Tipo de Usuário:</label>
+                <input type="text" id="nomeCompleto" placeholder="Insira o nome completo" name="nomeCompleto" required>
+                <br>
                 <select id="tipoUsuario" name="tipoUsuario"
                     style="padding: 5px; margin-bottom: 10px; border-radius: 5px; background-color: #fff !important; border: 1px solid #ccc; -webkit-appearance: none; -moz-appearance: none; appearance: none;"
                     required>
-                    <option disabled selected>Escolha o Tipo</option>
-                </select>
+                    <option disabled selected value="">Escolha o Tipo</option>
+                </select><br>
 
-                <label for="statusConta">Status de Conta:</label>
+
                 <select id="statusConta" name="statusConta"
                     style="padding: 5px; margin-bottom: 10px; border-radius: 5px; background-color: #fff !important; border: 1px solid #ccc; -webkit-appearance: none; -moz-appearance: none; appearance: none;"
                     required>
-                    <option disabled selected placeholder="Escolha o Status">Escolha o Status</option>
+                    <option disabled value="" selected>Escolha o Status</option>
                     <option value="ativo">Ativo</option>
                     <option value="inativo">Inativo</option>
-                </select>
+                </select><br>
 
-                <label for="telefone">Telefone:</label>
-                <input type="tel" id="telefone" name="telefone" pattern="[0-9]{2}-[0-9]{5}-[0-9]{4}"
-                    placeholder="00-00000-0000" required>
+
+                <input type="tel" id="telefone" name="telefone" placeholder="Insira o telefone 00-0000-0000"
+                    pattern="[0-9]{2}-[0-9]{5}-[0-9]{4}" placeholder="00-00000-0000" required>
                 <div id="resulTelColab"></div>
                 <div id="divfile">
                     <input type="file" name="foto" id="fileInput">
@@ -53,28 +85,51 @@
                         <img id="preview" class="bordaFoto" src="../../../imgs/padrao.jpeg" alt="FOTO AQUI">
                     </div>
                 </div>
-
-
             </div>
 
             <div id="rodape">
                 <div>
-                    <button id="guardarColab" type="submit">Guardar</button>
-                    <button id="cancelarColab">Cancelar</button>
+                    <div class="footerPesq">
+                        <button id="guardarColab" type="submit">Guardar</button>
+                    </div>
+                    <div class="footerPesq">
+                        <button id="cancelarColab">Cancelar</button>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
+    <!-- ************************************************************ -->
 
+    <!-- TITULO, TABELA E BOTÕES DE FUNCIONALIDADES -->
+    <div id="divTopo">
+        <h1>Colaboradores</h1>
+        <div>
+            <input id="filtragem" type="text" placeholder="Filtrar registros...">
+        </div>
+    </div>
 
-    <h1>Colaboradores</h1>
     <div id="divTabela">
 
         <div id="divAdd">
             <div id="divAddContent">
-                <p for="imgDiv">Adicionar novo colaborador</p>
-                <div id="imgDiv"><img id="" src="../../../imgs/add_24dp_E8EAED_FILL0_wght400_GRAD0_opsz24.svg"
-                        title="Adicionar novo colaborador" alt="">
+
+                <div id="mostraFunc" class="imgDiv o"><img id="imgBtn" src="../../../imgs/list.svg"
+                        title="Listar funções" alt="Listar funções">
+                </div>
+
+                <div id="imgDiv" class="imgDiv ocul ocultarBotao"><img class=""
+                        src="../../../imgs/add_24dp_E8EAED_FILL0_wght400_GRAD0_opsz24.svg"
+                        title="Adicionar novo colaborador" alt="adicionar novo colaborador">
+                </div>
+
+
+                <div id="btnPesquisaAvan" class="imgDiv ocul ocultarBotao"><img class="" id="imgPesq"
+                        src="../../../imgs/lupa.svg" title="Procurar colaboradores" alt="Procurar">
+                </div>
+
+                <div id="mostraTodosReg" class="imgDiv ocul ocultarBotao"><img class="" src="../../../imgs/table.svg"
+                        title="Listar Todos Colaboradores" alt="">
                 </div>
             </div>
         </div>
@@ -98,6 +153,7 @@
         </table>
 
     </div>
+    <!-- /******************************************************/ -->
 
     <script src="../../public/assets/js/colaboradores_js/index.js" type="module"></script>
 </body>

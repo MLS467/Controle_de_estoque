@@ -7,4 +7,8 @@ function PegarElemClass(classe) {
     return [...document.querySelectorAll(valor)];
 }
 
-export { PegarId, PegarElemClass }
+function PegarElem(valor) {
+    return [...document.querySelectorAll(valor)];
+}
+
+export { PegarId, PegarElemClass, PegarElem }

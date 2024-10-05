@@ -1,7 +1,7 @@
 // imports.js
 
 // Importações dos módulos necessários
-import { pegaDadosUsuarios } from "./colaborador.js";
+import { pegaDadosUsuarios, MostraLinhas } from "./colaborador.js";
 import { controleDoForm, ocultar } from "./janelaAddColab.js";
 import { recebeDadosColab } from "./pagarDados.js";
 import { constroiDivTel } from "./constroiDivTel.js";
@@ -14,6 +14,7 @@ import { retornaTelColab } from "./retornaTelColab.js"
 import { criandoSession } from "./session.js";
 import { verificaStatus } from "./status.js";
 import { ExcluirTel } from "./excluirTelColab.js";
+import { pequisaAvancada } from "./pesquisaAvancada.js";
 // Exportação dos módulos importados
 export {
     pegaDadosUsuarios,
@@ -31,5 +32,7 @@ export {
     retornaTelColab,
     criandoSession,
     verificaStatus,
-    ExcluirTel
+    ExcluirTel,
+    pequisaAvancada,
+    MostraLinhas
 };
