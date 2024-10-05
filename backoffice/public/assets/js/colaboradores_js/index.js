@@ -36,33 +36,47 @@ PegarId('imgDiv').addEventListener('click', controleDoForm);
 /**** operaçoes da janela adicionar novo colaborador (guardar) ****/
 PegarId('guardarColab').addEventListener('click', evt => {
     const tels = PegarElemClass("novo");
-    console.log(tels);
+
     let arr = [];
 
     if (tels.length === 0)
         arr = [];
     else
         tels.forEach(e => arr.push(e.textContent));
-    console.log(arr);
+
     const dados = {
         nome: PegarId('nomeCompleto').value,
         tipo: PegarId('tipoUsuario').value,
         status: PegarId('statusConta').value,
     }
 
-    if (arr.length > 0)
-        dados.telefone = arr
-    else
-        dados.telefone = [];
 
-    if (modojanela === "n")
-        recebeDadosColab(endpoints.inserir, dados);
-    else if (modojanela === "e") {
-        const id = evt.target.dataset.ideditar;
-        recebeDadosColab(`${endpoints.dadosEditados}?id=${id}`, dados);
+    if (dados.nome == "" || dados.tipo == "" || dados.status == "") {
+        const config = {
+            cor: "#f00",
+            tipo: "ok",
+            texto: "Preencha todos os campos!",
+            titulo: "ERRO",
+        }
+
+        Caixa.mostrar(config);
+    } else {
+
+
+        if (arr.length > 0)
+            dados.telefone = arr
+        else
+            dados.telefone = [];
+
+        if (modojanela === "n")
+            recebeDadosColab(endpoints.inserir, dados);
+        else if (modojanela === "e") {
+            const id = evt.target.dataset.ideditar;
+            recebeDadosColab(`${endpoints.dadosEditados}?id=${id}`, dados);
+        }
+
+        limpaCampos(dados);
     }
-
-    limpaCampos(dados);
 })
 /************************************************************************ */
 
