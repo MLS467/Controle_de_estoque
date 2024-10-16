@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="../../public/assets/css/fornecedores_css/index_fornecedor.css">
+
+    <title>Fornecedor</title>
+</head>
+
+<body class="container borda">
+
+    <!-- JANELA DE PESQUISA AVANÇADA -->
+    <div id="pesquisaAvancada" class="ocultar">
+        <div id="tituloPesq">
+            <p>Pesquisa Avancada</p>
+            <img id="closePesqAvanc" src="../../../imgs/close.svg" alt="">
+        </div>
+
+        <div id="CorpoPesq">
+            <div>
+                <div>
+
+                    <label for="idPesq">Id</label>
+                    <input type="radio" checked class="pesqRadio" value="id" id="idPesq" name="tipoPesq">
+                </div>
+                <div>
+
+                    <label for="nomePesq">Nome</label>
+                    <input type="radio" class="pesqRadio" value="nome" id="nomePesq" name="tipoPesq">
+                </div>
+            </div>
+            <div>
+
+                <input type="text" id="Pesq" placeholder="Pesquisar...">
+            </div>
+        </div>
+
+        <div id="footerPesq" class="footerPesq">
+            <button id="btnPesquisar">Pesquisar</button>
+        </div>
+    </div>
+
+    <!-- *********************************************************** -->
+
+    <!-- JANELA DE ADICIONAR NOVO Fornecedor -->
+    <div id="formAddFornecedor" class="ocultar">
+        <div id="caixaForm" class="borda">
+            <div id="tituloForm">
+                <div id="msgTitulo"></div>
+                <div id="closeTitulo">
+                    <img id="close" src="../../../imgs/close.svg" alt="fechar">
+                </div>
+            </div>
+
+            <div id="corpoForm">
+                <input type="text" id="nomeCompleto" placeholder="Insira o nome completo" name="nomeCompleto" required>
+                <br>
+
+                <select id="statusConta" name="statusConta"
+                    style="padding: 5px; margin-bottom: 10px; border-radius: 5px; background-color: #fff !important; border: 1px solid #ccc; -webkit-appearance: none; -moz-appearance: none; appearance: none;"
+                    required>
+                    <option disabled value="" selected>Escolha o Status</option>
+                    <option value="a">Ativo</option>
+                    <option value="i">Inativo</option>
+                </select><br>
+
+
+
+                <div id="divfile">
+                    <input type="file" name="foto" id="fileInput">
+                    <div id="divPreview">
+                        <img id="preview" class="bordaFoto" src="../../../imgs/padrao.jpeg" alt="FOTO AQUI">
+                    </div>
+                </div>
+            </div>
+
+            <div id="divAddContatoForn">
+                <button id="btn_addContForn">Adicionar contato fornecedor</button>
+                <div id="resAddContForn">
+                    <!-- dados dos contatos de fornecedores -->
+                    <table id="tabelaFornecedorContatosFornecedor">
+                        <thead>
+                            <tr id="theadPretoContatosFornecedor">
+                                <th>ID</th>
+                                <th>descrição Fornecedor</th>
+                                <th>Ações</th>
+                            </tr>
+                        </thead>
+                        <tbody id="dadosContatosFornecedor">
+                            <!-- <td>teste</td>
+                            <td>teste</td>
+                            <td>teste</td> -->
+                        </tbody>
+                    </table>
+                </div>
+
+            </div>
+
+            <div id="rodape">
+                <div>
+                    <div class="footerPesq">
+                        <button id="guardarFornecedor" type="submit">Guardar</button>
+                    </div>
+                    <div class="footerPesq">
+                        <button id="cancelarFornecedor">Cancelar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- ************************************************************ -->
+
+    <!-- TABELA DE CONTATOS DO FORNECEDOR -->
+    <div id="popupCont" class="ocultar">
+        <div id="tituloCont">
+            testando
+            <img id="fecharCont" src="../../../imgs/close.svg" alt="fechar">
+        </div>
+
+        <div id="tabelaContatos">
+            <div>
+                <table>
+                    <thead>
+                        <tr id="linhaContatos">
+                            <th>ID</th>
+                            <th>descrição Fornecedor</th>
+                            <th>Ações</th>
+                        </tr>
+                    </thead>
+                    <tbody id="dadosContatos">
+                        <!-- AQUI CONTATOS  -->
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <div id="rodapeCont"></div>
+    </div>
+    <!-- ****************************************** -->
+
+
+    <!-- TITULO, TABELA E BOTÕES DE FUNCIONALIDADES -->
+    <div id="divTopo">
+        <h1>Fornecedores</h1>
+        <div>
+            <input id="filtragem" type="text" placeholder="Filtrar registros...">
+        </div>
+    </div>
+
+    <div id="divTabela">
+
+        <div id="divAdd">
+            <div id="divAddContent">
+
+                <div id="mostraFunc" class="imgDiv o"><img id="imgBtn" src="../../../imgs/list.svg"
+                        title="Listar funções" alt="Listar funções">
+                </div>
+
+                <div id="imgDiv" class="imgDiv ocul ocultarBotao"><img class=""
+                        src="../../../imgs/add_24dp_E8EAED_FILL0_wght400_GRAD0_opsz24.svg"
+                        title="Adicionar novo Fornecedororador" alt="adicionar novo Fornecedororador">
+                </div>
+
+
+                <div id="btnPesquisaAvan" class="imgDiv ocul ocultarBotao"><img class="" id="imgPesq"
+                        src="../../../imgs/lupa.svg" title="Procurar Fornecedor" alt="Procurar">
+                </div>
+
+                <div id="mostraTodosReg" class="imgDiv ocul ocultarBotao"><img class="" src="../../../imgs/table.svg"
+                        title="Listar Todos Fornecedor" alt="">
+                </div>
+            </div>
+        </div>
+
+        <table id="tabelaFornecedor">
+            <thead>
+                <tr id="theadPreto">
+                    <th>ID</th>
+                    <th>descrição Fornecedor</th>
+                    <th>Status</th>
+                    <th>Ações</th>
+                </tr>
+            </thead>
+            <tbody id="dadosFornecedor">
+
+
+
+            </tbody>
+        </table>
+
+    </div>
+    <!-- /******************************************************/ -->
+
+    <script src="../../public/assets/js/fornecedores_js/index.js" type="module"></script>
+</body>
+
+</html>

@@ -1,0 +1,715 @@
+* {
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif !important;
+}
+
+body {
+    height: calc(100vh-120px);
+    overflow-y: hidden;
+    color: var(--cor-quarternaria);
+    font-family: Poppins;
+    /* border: var(--bordaRed) !important; */
+}
+
+:root {
+    --cor-principal: #04cb63;
+    --cor-secundaria: #fcb058;
+    --cor-terciaria: #c9c8c7;
+    --cor-quarternaria: #0D0D0D;
+    --bordaRed: 2px solid red;
+    --bordablue: 1px solid blue;
+    --bordaGreen: 1px solid green;
+    --cor-fundo-suave: #f4f4f4;
+    --cor-verde-claro: #66e6a8;
+    --cor-verde-escuro: #038c4c;
+    --cor-azul-suave: #58c4fc;
+    --cor-amarelo-suave: #F2B705;
+    --cor-texto-cinza-escuro: #3a3a3a;
+    --Efeito-brilhar: 0 0 10px rgba(255, 255, 255, 0.5),
+        0 0 20px rgba(255, 255, 255, 0.4),
+        0 0 30px rgba(255, 255, 255, 0.3),
+        0 0 40px rgba(255, 255, 255, 0.2);
+}
+
+
+/***********JANELA DE PESQUISA AVANCADA *************/
+#pesquisaAvancada {
+    width: 100%;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.75);
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+#tituloPesq {
+    color: #fff;
+    display: inherit;
+    justify-content: space-between;
+    align-items: center;
+    width: 40%;
+    padding: 0px 15px;
+    background-color: #000;
+    border-radius: 5px 5px 0px 0px;
+}
+
+#CorpoPesq {
+    /* border: 1px solid orangered; */
+    background-color: #eee;
+    display: inherit;
+    padding: 0px 15px;
+    justify-content: space-around;
+    align-items: center;
+    width: 40%;
+    height: 20%;
+    max-height: 50%;
+    flex-direction: column;
+}
+
+#CorpoPesq div {
+    width: 90%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#CorpoPesq div input[type='text'] {
+    border: 1px solid gray;
+    width: 100%;
+    padding: 1%;
+    border-radius: 5px;
+}
+
+#CorpoPesq div input[type='text']:focus {
+    border: 1px solid orangered !important;
+    outline: none !important;
+}
+
+#CorpoPesq div input[type='radio'] {
+    margin: 15px;
+    padding: 25px;
+    width: 20%;
+    height: 15px;
+}
+
+.footerPesq {
+    display: inherit;
+    justify-content: center;
+    align-items: center;
+    width: 40%;
+    padding: 0px 15px;
+    background-color: #000;
+    border-radius: 0px 0px 5px 5px;
+    padding: 10px 15px;
+}
+
+.footerPesq button {
+    background-color: #f39c12;
+    /* Cor de fundo laranja suave */
+    color: white;
+    /* Cor do texto */
+    padding: 10px 20px;
+    /* Espaçamento interno do botão */
+    border: none;
+    /* Remove a borda */
+    border-radius: 5px;
+    /* Bordas arredondadas */
+    cursor: pointer;
+    /* Muda o cursor para pointer ao passar sobre o botão */
+    font-size: 16px;
+    /* Tamanho da fonte */
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    /* Animação suave para hover */
+}
+
+.footerPesq button:hover {
+    background-color: #e67e22;
+    /* Muda a cor de fundo ao passar o mouse */
+    transform: scale(1.05);
+    /* Aumenta o tamanho ligeiramente no hover */
+}
+
+.footerPesq button:active {
+    background-color: #d35400;
+    /* Cor de fundo mais escura quando clicado */
+    transform: scale(0.98);
+    /* Suavemente diminui ao clicar */
+}
+
+/********************************/
+
+
+/***** topo *****/
+#divTopo {
+    width: 50%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    flex-direction: column;
+    /* border: var(--bordaRed); */
+}
+
+#divTopo div {
+    /* border: var(--bordablue); */
+    display: flex;
+    width: 100%;
+    margin-left: 18%;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+#divTopo div input[type='text'] {
+    margin: 10px;
+    padding: 5px;
+    border: 1px solid gray;
+    border-radius: 50px;
+}
+
+#divTopo div input[type='text']:focus {
+    border: 1px solid var(--cor-secundaria) !important;
+    outline: none !important;
+}
+
+/*****************/
+
+/*container caixa*/
+.container {
+    /* border: var(--borda); */
+    width: 90%;
+    margin: auto auto;
+}
+
+/***************/
+
+/*tabela*/
+
+#divTabela {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    /* padding: 2% 0%; */
+    height: 100vh;
+    overflow-y: auto;
+    /* border: var(--bordaGreen); */
+}
+
+#tabelaFornecedor {
+    width: 80%;
+    height: auto !important;
+    border-collapse: collapse;
+    margin-bottom: 15%;
+    font-size: 15px;
+    text-align: left;
+    /* padding: 15%; */
+}
+
+#tabelaFornecedor th {
+    padding: 10px 15px;
+    border: 1px solid #ddd;
+}
+
+#tabelaFornecedor td {
+    padding: 0px 15px;
+    border: 1px solid #ddd;
+}
+
+#tabelaFornecedor thead {
+    background-color: var(--cor-quarternaria);
+    color: var(--cor-fundo-suave);
+}
+
+#tabelaFornecedor tbody tr:nth-child(even) {
+    background-color: var(--cor-terciaria);
+}
+
+#tabelaFornecedor th {
+    text-transform: capitalize;
+}
+
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: var(--cor-terciaria);
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background-color: rgba(204, 204, 238, 0.384);
+    border-radius: 10px;
+}
+
+/*******************/
+
+
+/********* TABELA DE CONTATOS FORNECEDOR **********/
+
+#resAddContForn {
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    flex-direction: column;
+}
+
+#resAddContForn table {
+    overflow-y: auto;
+    width: 100%;
+    background-color: var(--cor-fundo-suave);
+}
+
+#btn_addContForn {
+    background-color: #f39c12;
+    /* Cor de fundo laranja suave */
+    color: white;
+    /* Cor do texto */
+    padding: 10px 20px;
+    /* Espaçamento interno do botão */
+    border: none;
+    /* Remove a borda */
+    border-radius: 5px;
+    /* Bordas arredondadas */
+    cursor: pointer;
+    /* Muda o cursor para pointer ao passar sobre o botão */
+    font-size: 16px;
+    /* Tamanho da fonte */
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    /* Animação suave para hover */
+}
+
+#btn_addContForn:hover {
+
+
+    background-color: #e67e22;
+    /* Muda a cor de fundo ao passar o mouse */
+    transform: scale(1.05);
+}
+
+
+#tabelaFornecedorContatosFornecedor thead tr {
+    text-align: center;
+    background-color: var(--cor-quarternaria);
+    color: var(--cor-fundo-suave);
+}
+
+#dadosContatosFornecedor td {
+    text-align: center;
+}
+
+/*******************/
+
+/******************* TABELA DE CONTATOS FORNECEDOR ************/
+#popupCont {
+    z-index: 99;
+    width: 100%;
+    padding: 15px;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.75);
+    /* align-items: flex-end; */
+    flex-direction: column;
+    position: fixed;
+    top: 0;
+    right: 0;
+}
+
+#tituloCont {
+    display: flex;
+    justify-content: space-between;
+    border-radius: 5px 5px 0px 0px;
+    padding: 2px;
+    text-align: start;
+    background-color: black;
+    color: #fff;
+    width: 40%;
+}
+
+
+#tabelaContatos {
+    border-radius: 5px;
+    width: 40%;
+    height: 40%;
+    overflow-y: auto;
+    text-align: center;
+    background-color: #fff;
+    border: none;
+}
+
+#rodapeCont {
+    border-radius: 0px 0px 5px 5px;
+    padding: 2%;
+    background-color: black;
+    color: #fff;
+    width: 40%;
+}
+
+#tabelaContatos table {
+    width: 100%;
+    /* border: var(--bordablue); */
+}
+
+/** background do titulo  **/
+#tabelaContatos thead tr {
+    background-color: black;
+    color: white;
+
+}
+
+/** background da linhas **/
+#tabelaContatos tbody tr:nth-child(odd) {
+    background-color: #eee;
+}
+
+#tabelaContatos tbody tr:nth-child(even) {
+    background-color: #ccc;
+}
+
+
+#tabelaContatos tbody tr td img {
+    width: 25px;
+}
+
+/* cor do fundo do icone hover*/
+#tabelaContatos tbody tr td img:hover {
+    background-color: #fff;
+    border-radius: 50%;
+}
+
+/* cor da linha hover */
+#tabelaContatos tbody tr:hover {
+    color: black;
+    background-color: var(--cor-amarelo-suave);
+}
+
+/*****************************************************************/
+
+
+
+
+/****BOTÃO DE ADD********/
+#divAdd {
+    z-index: 99;
+    width: 10%;
+    padding: 15px;
+    height: 50%;
+    display: flex;
+    justify-content: space-around;
+    /* align-items: flex-end; */
+    flex-direction: column;
+    flex-direction: row;
+    position: fixed;
+    top: 0;
+    right: 0;
+    margin: 1%;
+    /* border: var(--bordaGreen); */
+}
+
+#divAddContent {
+    /* border: var(--bordaRed); */
+    display: flex;
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 30%;
+    height: 100%;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: column;
+    /* border: var(--bordablue); */
+}
+
+#divAddContatoForn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-color: var(--cor-fundo-suave) !important;
+}
+
+#divAddContatoForn button {
+    margin: 10px;
+}
+
+#imgDiv {
+
+    background-color: var(--cor-amarelo-suave);
+}
+
+.imgDiv {
+    /* border: var(--bordaRed); */
+    margin: 10px 10px;
+    display: flex;
+    width: 50px;
+    height: 50px;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    background-color: var(--cor-amarelo-suave);
+    cursor: pointer;
+}
+
+.imgDiv:hover {
+    opacity: 0.7;
+    box-shadow: var(--Efeito-brilhar);
+}
+
+#imgDiv:hover {
+    opacity: 0.7;
+    box-shadow: var(--Efeito-brilhar);
+}
+
+
+.ocultarBotao {
+    visibility: hidden;
+}
+
+
+/*********************/
+
+/* Adicionar novo fornecedor */
+.borda {
+    border: var(--borda);
+}
+
+#formAddFornecedor {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.75);
+    z-index: 99;
+
+}
+
+#caixaForm {
+    border: var(--borda-red);
+    position: relative;
+    border-radius: 15px;
+    display: flex;
+    flex-direction: column;
+    width: 40%;
+    height: auto;
+    overflow-y: auto;
+    background-color: var(--cor-secundaria);
+}
+
+#tituloForm {
+    width: 100%;
+    text-transform: uppercase;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: #fff;
+    padding: 10px;
+    border-radius: 5px 5px 0 0;
+    background-color: var(--cor-quarternaria);
+}
+
+#corpoForm {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    padding: 10px;
+    max-height: 75%;
+    flex-direction: column;
+    background-color: var(--cor-terciaria);
+}
+
+#imgDivPrev {
+    background-color: var(--cor-terciaria);
+    width: 40%;
+    border: var(--borda-red);
+}
+
+#corpoForm label {
+    margin: 5px 0;
+}
+
+#corpoForm input[type='text'],
+#corpoForm input[type='tel'] {
+    width: 100%;
+    border: 2px solid #ccc;
+    padding: 3px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+}
+
+#corpoForm input[type='text']:focus,
+#corpoForm input[type='tel']:focus {
+    border: 2px solid var(--cor-amarelo-suave);
+    outline: none;
+}
+
+#corpoForm select {
+    padding: 3px;
+    width: 100%;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+}
+
+#divfile {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+}
+
+#fileInput {
+    margin-top: 5px;
+    width: 80%;
+    display: inline-block;
+    padding: 5px 10px;
+    cursor: pointer;
+    background-color: var(--cor-fundo-suave);
+    color: white;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    margin-bottom: 10px;
+}
+
+#divPreview {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#preview {
+    width: 70px;
+    height: 100px;
+}
+
+#rodape {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--cor-quarternaria);
+    border-radius: 0 0 5px 5px;
+}
+
+#rodape div {
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-color: var(--cor-quarternaria);
+}
+
+#closeTitulo,
+#tituloPesq img,
+#fecharCont {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 5px;
+}
+
+.bordaFoto {
+    border: 2px solid #ddd;
+}
+
+#closeTitulo:hover,
+#tituloPesq img:hover,
+#fecharCont:hover {
+    background-color: red;
+}
+
+.ocultar {
+    display: none !important;
+    transition: all 0.5s !important;
+}
+
+/***************************/
+
+/** Telefone **/
+#resulTelFornecedor {
+    /* border: var(--bordaRed); */
+    width: 100%;
+    height: 45px;
+    overflow: auto;
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.numtel {
+    display: flex;
+    height: 30px;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: row;
+    color: var(--cor-quarternaria);
+    padding: 8px;
+    border: 1px solid var(--cor-quarternaria);
+    border-radius: 5px;
+    background-color: var(--cor-amarelo-suave);
+    margin: 1px 2px 2px 0px !important;
+}
+
+
+.numtel img {
+    width: 12px;
+    margin-left: 15px;
+    background-color: red;
+}
+
+
+
+
+/**icone da tabela (acões) **/
+.iconeTabela {
+    height: 25px;
+    width: 32px;
+    cursor: pointer;
+}
+
+.iconeTabela:hover {
+    height: 25px;
+    width: 32px;
+    border-radius: 50%;
+    box-shadow: var(--Efeito-brilhar);
+    background-color: var(--cor-fundo-suave);
+}
+
+.iconeTabelaOn {
+    cursor: pointer;
+    width: 40px !important;
+}
+
+
+#acoes {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-direction: row;
+
+}
+
+tr:nth-child(odd):hover,
+tr:nth-child(even):hover {
+    background-color: var(--cor-amarelo-suave);
+    color: #fff;
+}
+
+#theadPreto:hover {
+    background-color: var(--cor-quarternaria) !important;
+    color: var(--cor-fundo-suave) !important;
+}
+
+/******************************/

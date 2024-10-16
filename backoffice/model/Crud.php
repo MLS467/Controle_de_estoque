@@ -29,7 +29,7 @@ abstract class Crud extends Db
 
     public function selecionarUmRegistro($id)
     {
-        $sql = "SELECT * FROM usuario WHERE id_usu = ?";
+        $sql = "SELECT * FROM pessoa WHERE id_pes = ?";
         // $sql = "SELECT * FROM $this->nomeTabela WHERE $coluna = ?";
         $query = self::preparar($sql);
         $query->execute(array($id));
@@ -56,6 +56,15 @@ abstract class Crud extends Db
         $res = $query->fetch(PDO::FETCH_ASSOC);
 
         return $res;
+    }
+
+    public function selecionarTodosRegistroPorColuna($coluna, $campo)
+    {
+        $sql = "SELECT * FROM $this->nomeTabela WHERE $coluna = $campo AND status_pes = 'a'";
+
+        $query = self::preparar($sql);
+        $query->execute();
+        return  $query->fetchAll(PDO::FETCH_ASSOC);
     }
 
     public function deletarUmRegistro($id)

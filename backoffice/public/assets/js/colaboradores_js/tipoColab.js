@@ -2,13 +2,11 @@
 import { PegarId } from "./pegaElementosDOM.js";
 
 const pegaTipo = async (endpoint) => {
-
     let res = await fetch(endpoint);
     res = await res.json();
-
-
+    console.log(res);
     res.resultado.map(e => {
-        PegarId('tipoUsuario').appendChild(criaTipo(e.desc_tip_usu, e.id_tip_usu));
+        PegarId('tipoUsuario').appendChild(criaTipo(e.desc_tpes, e.id_tipo_pessoa)); // atualizado
     });
 }
 
@@ -19,7 +17,4 @@ function criaTipo(valor, nivel) {
     return option;
 }
 
-
 export { pegaTipo };
-
-/************************************ */

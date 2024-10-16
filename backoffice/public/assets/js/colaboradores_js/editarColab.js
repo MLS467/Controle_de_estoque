@@ -34,10 +34,11 @@ const editarColab = async (id) => {
 
     const val = res.resposta;
     PegarId('guardarColab').setAttribute('data-idEditar', id);
-    PegarId('nomeCompleto').value = val.nome_usu;
-    PegarId('tipoUsuario').value = val.tipo_usu_fk;
-    PegarId('statusConta').value = val.status_usu == "a" ? 'ativo' : 'inativo'; //img_usu
-    PegarId('preview').src = val.img_usu ? `${paths.imgRecuperada}/${val.img_usu}` : `${paths.imgPadrao}`;
+    PegarId('nomeCompleto').value = val.nome_pes;
+    PegarId('tipoUsuario').value = val.id_tipo_pessoa_fk;
+    PegarId('statusConta').value = val.status_pes == "a" ? 'a' : 'i';
+    PegarId('fileInput').textContent = val.img_pes;
+    PegarId('preview').src = val.img_pes ? `${paths.imgRecuperada}/${val.img_pes}` : `${paths.imgPadrao}`;
     PegarId('msgTitulo').innerHTML = "Editar Colaborador";
 }
 

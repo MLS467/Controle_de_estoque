@@ -2,14 +2,14 @@ const server = sessionStorage.getItem('servidor_backoffice');
 // arquivo de endpoints usados no sistema de controle de estoque
 const endpoints = {
     inserir: `${server}/controller/controller_colaborador/inserirJson.php`,
-    getTipoUsu: `${server}/controller/controller_colaborador/retornaTipoColab.php`,
-    dadosUsu: `${server}/controller/controller_colaborador/retornaColab.php`,
-    excluirUsu: `${server}/controller/controller_colaborador/excluirColab.php`,
-    editarUsu: `${server}/controller/controller_colaborador/editarColab.php`,
-    retornaTel: `${server}/controller/controller_colaborador/retornaTelColab.php`,
+    getTipoUsu: `${server}/controller/controller_colaborador/retornaTipoPessoa.php`,
+    dadosUsu: `${server}/controller/controller_colaborador/retornaPessoa.php`,
+    excluirUsu: `${server}/controller/controller_colaborador/excluirPessoa.php`,
+    editarUsu: `${server}/controller/controller_colaborador/editarPessoa.php`,
+    retornaTel: `${server}/controller/controller_colaborador/retornaTelPessoa.php`,
     dadosEditados: `${server}/controller/controller_colaborador/dadosEditados.php`,
-    mudarStatus: `${server}/controller/controller_colaborador/mudarStatusColab.php`,
-    excluirTelColab: `${server}/controller/controller_colaborador/excluirTelColab.php`,
+    mudarStatus: `${server}/controller/controller_colaborador/mudarStatusPessoa.php`,
+    excluirTelColab: `${server}/controller/controller_colaborador/excluirTelPessoa.php`,
     PesquisaAvancada: `${server}/controller/controller_colaborador/pesquisaAvancada.php`,
 }
 
