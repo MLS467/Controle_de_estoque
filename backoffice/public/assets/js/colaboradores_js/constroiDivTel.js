@@ -20,7 +20,7 @@ const constroiDivTel = (valor, caminhoImg, tipo) => {
             if (ExcluirTel(id, numero)) {
                 excluirTelColab.remove();
                 const config = {
-                    cor: "#f00",
+                    cor: "#FF0000 ",
                     tipo: "ok",
                     texto: "Telefone excluido com sucesso da base de dados!",
                     titulo: "Mensagem",
@@ -32,7 +32,7 @@ const constroiDivTel = (valor, caminhoImg, tipo) => {
         } else {
 
             const config = {
-                cor: "#f00",
+                cor: "#FF0000 ",
                 tipo: "ok",
                 texto: "Telefone excluido com sucesso!",
                 titulo: "Mensagem",

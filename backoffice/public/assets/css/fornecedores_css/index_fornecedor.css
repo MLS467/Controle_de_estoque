@@ -302,8 +302,28 @@ body {
 
 /*******************/
 
+#dadosContatosCelular {
+    display: flex;
+    height: inherit;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    overflow-y: auto;
+
+}
+
+#dadosContatosCelular td {
+    width: 100%;
+}
+
+#dadosContatosCelular td:nth-child(odd) {
+    background-color: var(--cor-terciaria);
+}
+
+
 /******************* TABELA DE CONTATOS FORNECEDOR ************/
-#popupCont {
+#popupCont,
+#popupCelular {
     z-index: 99;
     width: 100%;
     padding: 15px;
@@ -319,7 +339,7 @@ body {
     right: 0;
 }
 
-#tituloCont {
+.tituloCont {
     display: flex;
     justify-content: space-between;
     border-radius: 5px 5px 0px 0px;
@@ -624,7 +644,8 @@ body {
 
 #closeTitulo:hover,
 #tituloPesq img:hover,
-#fecharCont:hover {
+#fecharCont:hover,
+#fecharContCelular:hover {
     background-color: red;
 }
 
@@ -701,9 +722,9 @@ body {
 
 }
 
-tr:nth-child(odd):hover,
-tr:nth-child(even):hover {
-    background-color: var(--cor-amarelo-suave);
+tbody tr:nth-child(odd):hover,
+tbody tr:nth-child(even):hover {
+    background-color: var(--cor-amarelo-suave) !important;
     color: #fff;
 }
 

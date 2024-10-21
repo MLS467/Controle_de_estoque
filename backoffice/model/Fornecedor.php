@@ -5,7 +5,8 @@ namespace sistema\Model;
 require_once __DIR__ . "/../vendor/autoload.php";
 
 use sistema\Model\Crud;
-use sistema\Model\contatos_fornecedor;
+use sistema\Model\Contatos_fornecedor;
+use sistema\Model\Db;
 use PDOException;
 use PDO;
 
@@ -41,7 +42,7 @@ class Fornecedor extends Crud
                 $this->setId(Db::conectar()->lastInsertId());
                 if ($this->getId()) {
                     foreach ($this->contatos as $key => $value) {
-                        (new contatos_fornecedor($value, $this->getId()))->inserir();
+                        (new Contatos_fornecedor($value, $this->getId()))->inserir();
                     }
                     return true;
                 } else {
@@ -84,15 +85,34 @@ class Fornecedor extends Crud
 
     public function selecionarUmRegistroPorId($id)
     {
-        $sql = "SELECT * FROM $this->nomeTabela WHERE id_for = ?";
-        // $sql = "SELECT * FROM $this->nomeTabela WHERE $coluna = ?";
+        $sql = "SELECT * FROM fornecedor as fn 
+        JOIN contato_fornecedor as cf ON fn.id_for = cf.id_forn_fk 
+        JOIN pessoa p ON cf.id_pes_fk = p.id_pes 
+        WHERE fn.id_for = ? LIMIT 100";
+
         $query = self::preparar($sql);
         $query->execute(array($id));
+
+
+        $res = $query->fetch(PDO::FETCH_ASSOC);
+        if ($res)
+            return $res;
+        return $this->selecionarFornecedorPorId($id);
+    }
+
+    public function selecionarFornecedorPorId($id)
+    {
+
+        $sql = "SELECT * FROM fornecedor WHERE id_for = ?";
+        $query = self::preparar($sql);
+        $query->execute(array($id));
+
         $res = $query->fetch(PDO::FETCH_ASSOC);
         if ($res)
             return $res;
         return false;
     }
+
     public function atualizarDados($id) {}
 
     // public function atualizarDados($id)

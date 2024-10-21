@@ -40,6 +40,7 @@ function MostraLinhas(arr) {
     PegarElemClass('iconTableEdit').forEach(e => {
         e.addEventListener('click', (evt) => {
             PegarId('dadosContatosFornecedor').innerHTML = "";
+
             editarFornecedor(evt.target.parentNode.parentNode.dataset.idfornecedor)
         });
     })

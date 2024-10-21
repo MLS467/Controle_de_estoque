@@ -25,7 +25,7 @@ const pequisaAvancada = () => {
         if (valorInput.length === 0) {
             Caixa.ocultar();
             const config = {
-                cor: "#f00",
+                cor: "#FF0000 ",
                 tipo: "ok",
                 texto: "Preencha os campos!",
                 titulo: "Mensagem",

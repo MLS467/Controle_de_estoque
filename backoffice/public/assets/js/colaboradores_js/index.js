@@ -53,7 +53,7 @@ PegarId('guardarColab').addEventListener('click', evt => {
 
     if (dados.nome == "" || dados.tipo == "" || dados.status == "") {
         const config = {
-            cor: "#f00",
+            cor: "#FF0000 ",
             tipo: "ok",
             texto: "Preencha todos os campos!",
             titulo: "ERRO",
@@ -126,7 +126,7 @@ PegarId('telefone').addEventListener('keyup', evt => {
         const valor = PegarId('telefone').value;
         const img = paths.imgExcluir;
         const config = {
-            cor: "#f00",
+            cor: "#FF0000 ",
             tipo: "ok",
             texto: "Insira um telefone válido!",
             titulo: "Mensagem",

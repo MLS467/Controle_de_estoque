@@ -4,9 +4,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../public/assets/css/fornecedores_css/index_fornecedor.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
 
-    <link rel="stylesheet" href="../../public/assets/css/fornecedores_css/index_fornecedor.css">
 
     <title>Fornecedor</title>
 </head>
@@ -116,8 +116,8 @@
 
     <!-- TABELA DE CONTATOS DO FORNECEDOR -->
     <div id="popupCont" class="ocultar">
-        <div id="tituloCont">
-            testando
+        <div class="tituloCont">
+            Fornecedor Ativos
             <img id="fecharCont" src="../../../imgs/close.svg" alt="fechar">
         </div>
 
@@ -141,7 +141,33 @@
     </div>
     <!-- ****************************************** -->
 
+    <!-- TABELA DE TELEFONES DO CONTATO DO TIPO FORNECEDOR -->
+    <div id="popupCelular" class="ocultar">
+        <div class="tituloCont">
+            CONTATOS FORNECEDORES
+            <img id="fecharContCelular" src="../../../imgs/close.svg" alt="fechar">
+        </div>
 
+        <div id="tabelaContatos">
+            <div>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Celular</th>
+                        </tr>
+                    </thead>
+                    <tbody id="dadosContatosCelular">
+                        <!-- AQUI CONTATOS  -->
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+    </div>
+
+
+
+    <!-- ****************************************************** -->
     <!-- TITULO, TABELA E BOTÕES DE FUNCIONALIDADES -->
     <div id="divTopo">
         <h1>Fornecedores</h1>

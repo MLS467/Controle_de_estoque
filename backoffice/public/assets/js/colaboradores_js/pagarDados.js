@@ -23,7 +23,7 @@ const recebeDadosColab = (endpoint, dados) => {
             console.log("Arquivo enviado com sucesso:", result);
 
             const config = {
-                cor: "#0f0",
+                cor: "#038c4c",
                 tipo: "ok",
                 texto: "Arquivo enviado com sucesso!",
                 titulo: "SUCESSO",
@@ -38,7 +38,7 @@ const recebeDadosColab = (endpoint, dados) => {
             console.error("Erro ao enviar o arquivo:", error);
 
             const config = {
-                cor: "#f00",
+                cor: "#FF0000 ",
                 tipo: "ok",
                 texto: "Erro ao enviar o arquivo!",
                 titulo: "ERRO",

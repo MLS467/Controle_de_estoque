@@ -45,7 +45,7 @@ PegarId('guardarFornecedor').addEventListener('click', evt => {
 
     if (dados.nome == "" || dados.status == "") {
         const config = {
-            cor: "#f00",
+            cor: "#FF0000 ",
             tipo: "ok",
             texto: "Preencha todos os campos!",
             titulo: "ERRO",

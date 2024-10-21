@@ -19,7 +19,7 @@ const editarColab = async (id) => {
 
     if (tels.telefones === "Nenhum Telefone encotrado!") {
         const config = {
-            cor: "#f00",
+            cor: "#FF0000 ",
             tipo: "ok",
             texto: "Colaborador sem Telefone!",
             titulo: "Mensagem",
